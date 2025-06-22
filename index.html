@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeScribe - Every Life Deserves a Legacy</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+        
+        /* Main Container */
+        .desktop-1 {
+            position: relative;
+            width: 1440px;
+            height: 6628px;
+            background: #FFFFFF;
+            margin: 0 auto;
+        }
+        
+        /* Top Banner */
+        .top-banner {
+            position: absolute;
+            width: 1440px;
+            height: 44px;
+            left: 0px;
+            top: 0px;
+            background: #1D7E6F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .top-banner-text {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            color: #FFFFFF;
+        }
+        
+        /* Navigation */
+        .navigation {
+            position: absolute;
+            width: 1440px;
+            height: 100px;
+            left: 0px;
+            top: 44px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        
+        .logo-text-container {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        
+        .logo-text-life {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 1;
+            color: #FDB913;
+            margin: 0;
+        }
+        
+        .logo-text-scribe {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 1;
+            color: #1D7E6F;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-cta {
+            width: 151px;
+            height: 38px;
+            background: #FE5E2E;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .nav-cta:hover {
+            background: #E54E1E;
+            transform: translateY(-2px);
+        }
+        
+        .nav-cta-text {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            color: #FFFFFF;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: absolute;
+            width: 1440px;
+            height: 580px;
+            left: 0px;
+            top: 142px;
+            display: flex;
+        }
+        
+        .hero-left {
+            position: absolute;
+            width: 658px;
+            height: 580px;
+            left: 0px;
+            top: 0px;
+            background: #1D7E6F;
+            padding: 90px 74px;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 55px;
+            line-height: 68px;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            margin-bottom: 35px;
+        }
+        
+        .hero-title-legacy {
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+            margin-bottom: 45px;
+        }
+        
+        .hero-cta {
+            width: 238px;
+            height: 57px;
+            background: #FE5E2E;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 14px;
+            border: none;
+        }
+        
+        .hero-cta:hover {
+            background: #E54E1E;
+            transform: translateY(-2px);
+        }
+        
+        .hero-cta-text {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+        }
+        
+        .hero-tagline {
+            font-family: 'Inter';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+        }
+        
+        .hero-right {
+            position: absolute;
+            width: 782px;
+            height: 580px;
+            left: 658px;
+            top: 0px;
+            background: url('images/chapter_image1.png') center/cover;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            position: absolute;
+            width: 1440px;
+            height: 531px;
+            left: 0px;
+            top: 722px;
+            background: #FE5E2E;
+            display: flex;
+            align-items: center;
+            padding: 0 219px;
+        }
+        
+        .oprah-image {
+            width: 297px;
+            height: 315px;
+            background: url('images/Oprah.png') center/cover;
+            border-radius: 10px;
+        }
+        
+        .quote-content {
+            margin-left: 67px;
+            flex: 1;
+        }
+        
+        .quote-header {
+            font-family: 'Inter';
+            font-style: italic;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .quote-text {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 50px;
+            line-height: 66px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            color: #000000;
+        }
+        
+        .quote-author::before {
+            content: "• ";
+            margin-right: 5px;
+        }
+        
+        /* How it Works Section */
+        .how-it-works {
+            position: absolute;
+            width: 1440px;
+            left: 0px;
+            top: 1312px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 67px;
+            color: #1D7E6F;
+            text-align: center;
+            margin-bottom: 42px;
+        }
+        
+        .steps-container {
+            display: flex;
+            gap: 15px;
+            padding: 0 37px;
+        }
+        
+        .step-card {
+            width: 262px;
+            height: 401px;
+            background: #F6F6F6;
+            border: 1px solid #1D7E6F;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 27px 28px;
+        }
+        
+        .step-image {
+            width: 207px;
+            height: 163px;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 15px;
+        }
+        
+        .step-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            color: #1D7E6F;
+            text-align: center;
+            margin-bottom: 14px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+            text-align: center;
+        }
+        
+        /* Sign of the Times Section */
+        .sign-of-times {
+            position: absolute;
+            width: 1440px;
+            height: 620px;
+            left: 0px;
+            top: 1886px;
+            background: #F4F0E7;
+            border: 1px solid #F4F0E7;
+            padding: 100px 163px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sign-content {
+            width: 447.8px;
+        }
+        
+        .sign-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 67px;
+            letter-spacing: -0.04em;
+            color: #1D7E6F;
+            margin-bottom: 16px;
+        }
+        
+        .sign-description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            color: #000000;
+        }
+        
+        .sign-images {
+            position: absolute;
+            right: 0;
+            top: 96px;
+            display: flex;
+            gap: 27px;
+            overflow: hidden;
+        }
+        
+        .sign-image {
+            width: 407px;
+            height: 428px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Features Sections */
+        .feature-section {
+            position: absolute;
+            width: 1440px;
+            display: flex;
+            align-items: center;
+            padding: 0 126px;
+        }
+        
+        .feature-left {
+            flex: 1;
+        }
+        
+        .feature-right {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 50px;
+            color: #1D7E6F;
+            margin-bottom: 6px;
+        }
+        
+        .feature-subtitle {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .feature-description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 32px;
+            color: #000000;
+        }
+        
+        .feature-image {
+            width: 558px;
+            height: 388px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 25px;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            position: absolute;
+            width: 1440px;
+            height: 844px;
+            left: 0px;
+            top: 3698px;
+            background: #1D7E6F;
+            padding: 54px 57px;
+        }
+        
+        .pricing-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 50px;
+            line-height: 32px;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 101px;
+        }
+        
+        .pricing-cards {
+            display: flex;
+            gap: 63px;
+            justify-content: center;
+        }
+        
+        .pricing-card {
+            width: 400px;
+            height: 521px;
+            background: #FFFFFF;
+            border: 3px solid #FE5E2E;
+            border-radius: 20px;
+            padding: 18px 22px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .plan-name {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            color: #000000;
+        }
+        
+        .plan-price {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 32px;
+            color: #FE5E2E;
+            margin: 8px 0 19px 0;
+        }
+        
+        .plan-divider {
+            width: 355px;
+            height: 0px;
+            border: 1px solid #000000;
+            margin-bottom: 20px;
+        }
+        
+        .plan-description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 28px;
+            color: #000000;
+            margin-bottom: 17px;
+            height: 84px;
+        }
+        
+        .plan-features {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 57px;
+            height: 150px;
+        }
+        
+        .plan-button {
+            width: 355px;
+            height: 50px;
+            background: #FE5E2E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .plan-button:hover {
+            background: #E54E1E;
+            transform: translateY(-2px);
+        }
+        
+        .plan-button-text {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            color: #FFFFFF;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            position: absolute;
+            width: 1440px;
+            left: 0px;
+            top: 4609px;
+            padding: 0 270px;
+        }
+        
+        .faq-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 50px;
+            line-height: 67px;
+            letter-spacing: -0.04em;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 53px;
+        }
+        
+        .faq-item {
+            margin-bottom: 45px;
+        }
+        
+        .faq-question {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 27px;
+            line-height: 36px;
+            letter-spacing: -0.04em;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 17px;
+        }
+        
+        .faq-answer {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #000000;
+            margin-bottom: 24px;
+        }
+        
+        .faq-divider {
+            width: 899.03px;
+            height: 0px;
+            border: 1px solid #000000;
+            margin: 0 auto;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            position: absolute;
+            width: 1158px;
+            height: 345px;
+            left: 142px;
+            top: 5609px;
+            background: #FE5E2E;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 67px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #FFFFFF;
+            margin-bottom: 17px;
+        }
+        
+        .cta-subtitle {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #FFFFFF;
+            margin-bottom: 53px;
+        }
+        
+        .cta-button {
+            width: 493px;
+            height: 53px;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #F5F5F5;
+            transform: translateY(-2px);
+        }
+        
+        .cta-button-text {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #000000;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            position: absolute;
+            width: 1440px;
+            top: 6017px;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 199px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 278px;
+        }
+        
+        .benefit-icon {
+            width: 153px;
+            height: 153px;
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .benefit-title {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 27px;
+            line-height: 36px;
+            letter-spacing: -0.04em;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 17px;
+        }
+        
+        .benefit-description {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #000000;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            width: 1440px;
+            left: 0px;
+            top: 6362px;
+            border-top: 1px solid #000000;
+            padding: 48px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        
+        .footer-email {
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: -0.04em;
+            color: #000000;
+        }
+        
+        /* Icon styles */
+        .icon-easy {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .icon-secure {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .icon-brain {
+            width: 70px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop-1">
+        <!-- Top Banner -->
+        <div class="top-banner">
+            <div class="top-banner-text">Build your Life Book today — your first chapters are on us.</div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="navigation">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <!-- New logo design with feather and heartbeat -->
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Feather -->
+                        <path d="M35 5C35 5 29 8.6 25 15C21 21.4 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 35C35 30 32.4 20 35 5Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
+                        <path d="M25 15C25 15 22.4 20 22.4 25C22.4 30 25 35 25 35" stroke="#FFFFFF" stroke-width="1.2"/>
+                        <!-- Heartbeat line -->
+                        <path d="M5 25L15 25L18.6 20L22.4 30L26.2 15L30 35L34.8 25L45 25" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="logo-text-container">
+                    <span class="logo-text-life">Life</span>
+                    <span class="logo-text-scribe">SCRIBE</span>
+                </div>
+            </div>
+            <button class="nav-cta">
+                <span class="nav-cta-text">Start Free Trial</span>
+            </button>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-left">
+                <h1 class="hero-title">Every Life Deserves<br>a <span class="hero-title-legacy">Legacy</span></h1>
+                <p class="hero-subtitle">Lifescribe helps you capture your unique life experiences and preserve them for generations to come.</p>
+                <button class="hero-cta">
+                    <span class="hero-cta-text">Start Free Trial</span>
+                </button>
+                <p class="hero-tagline">Start building your legacy today.</p>
+            </div>
+            <div class="hero-right"></div>
+        </div>
+        
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <div class="oprah-image"></div>
+            <div class="quote-content">
+                <div class="quote-header">The Power of Story</div>
+                <div class="quote-text">"The most powerful stories are the ones we tell ourselves — and choose to share."</div>
+                <div class="quote-author">Oprah Winfrey</div>
+            </div>
+        </div>
+        
+        <!-- How it Works Section -->
+        <div class="how-it-works">
+            <h2 class="section-title">How it Works</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-image" style="background-image: url('images/chapter_image1.png');"></div>
+                    <h3 class="step-title">Speak, Type, or Upload Photos</h3>
+                    <p class="step-description">Let your story flow naturally—talk to the app, write it down, or upload photo albums to get started.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-image" style="background-image: url('images/chapter_image2.png');"></div>
+                    <h3 class="step-title">Choose a Style or Director</h3>
+                    <p class="step-description">Select a literary tone or visual flair—from Hemingway to Hitchcock—to match the feel of your memory.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-image" style="background-image: url('images/logo.png');"></div>
+                    <h3 class="step-title">Let AI Transform Your Story</h3>
+                    <p class="step-description">Lifescribe transforms your memory into a beautifully written chapter and a personalized illustration.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-image" style="background-image: url('images/logo_bg.png');"></div>
+                    <h3 class="step-title">Add To Your Life Book</h3>
+                    <p class="step-description">Save your story in a personal book that organizes your memories by theme, time, or milestones.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-image" style="background-image: url('images/google_logo.png');"></div>
+                    <h3 class="step-title">Save It With Future Generations</h3>
+                    <p class="step-description">Keep it private, print it, or share it with loved ones—it's your story, told your way.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sign of the Times Section -->
+        <div class="sign-of-times">
+            <div class="sign-content">
+                <h2 class="sign-title">Sign of the Times</h2>
+                <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
+            </div>
+            <div class="sign-images">
+                <div class="sign-image" style="background-image: url('images/NL_1001_700x700 1.png');"></div>
+                <div class="sign-image" style="background-image: url('images/Elvis_Presley_Jailhouse_Rock.jpg');"></div>
+                <div class="sign-image" style="background-image: url('images/Apollo_15_flag_rover_LM_Irwin-1200x1200.png');"></div>
+                <div class="sign-image" style="background-image: url('images/Bobbi-Kelly-and-Nick-Ercoline-Woodstock-1969-631.webp');"></div>
+                <div class="sign-image" style="background-image: url('images/7c7afbda-ca81-492d-ac6a-296c0eefe795.sized-1000x1000.jpg');"></div>
+                <div class="sign-image" style="background-image: url('images/post-1_image0-52.png');"></div>
+            </div>
+        </div>
+        
+        <!-- Feature Section 1 -->
+        <div class="feature-section" style="top: 2645px;">
+            <div class="feature-left">
+                <div class="feature-image" style="background-image: url('images/chapter_image1.png');"></div>
+            </div>
+            <div class="feature-right" style="margin-left: 83px;">
+                <h2 class="feature-title">Your Story, Organized Beautifully</h2>
+                <p class="feature-subtitle">Just speak or type — we'll do the writing.</p>
+                <p class="feature-description">Whether you're remembering your first home, a special trip, or an old love, Lifescribe helps you bring it to life. Choose a literary voice, write as much or as little as you like, and we'll take care of the rest—creating chapters that feel personal and timeless.</p>
+            </div>
+        </div>
+        
+        <!-- Feature Section 2 -->
+        <div class="feature-section" style="top: 3121px;">
+            <div class="feature-left">
+                <h2 class="feature-title">Not Sure What to Write? We'll Guide You.</h2>
+                <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
+                <p class="feature-description">Legacy Quest is our interactive storytelling journey. Each day, you'll get a new memory prompt designed to spark rich, personal stories—like "Your First Wheels" or "The Teacher Who Understood You." You can follow our guided path or jump around based on what speaks to you.</p>
+            </div>
+            <div class="feature-right" style="margin-left: 61px;">
+                <div class="feature-image" style="background-image: url('images/chapter_image2.png');"></div>
+            </div>
+        </div>
+        
+        <!-- Pricing Section -->
+        <div class="pricing-section">
+            <h2 class="pricing-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="plan-name">Start</div>
+                    <div class="plan-price">FREE</div>
+                    <div class="plan-divider"></div>
+                    <p class="plan-description">Begin your storytelling journey with essential features to capture key moments.</p>
+                    <p class="plan-features">3 AI-generated chapters<br>Choose tone & writing style<br>Save to personal book<br>Simple story editor<br>Access on all devices</p>
+                    <button class="plan-button">
+                        <span class="plan-button-text">Try For Free</span>
+                    </button>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Plus</div>
+                    <div class="plan-price">$4.99/mo</div>
+                    <div class="plan-divider"></div>
+                    <p class="plan-description">Expand your story with increased chapter limits and more customization options.</p>
+                    <p class="plan-features">5 total chapters/month<br>Custom tone & voice options<br>Save and organize multiple books<br>Edit, regenerate, or rewrite stories<br>Priority email support</p>
+                    <button class="plan-button">
+                        <span class="plan-button-text">Sign Up</span>
+                    </button>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Unlimited Legacy</div>
+                    <div class="plan-price">$9.99/mo</div>
+                    <div class="plan-divider"></div>
+                    <p class="plan-description">Write your life's story without boundaries—unlimited chapters, unlimited possibilities.</p>
+                    <p class="plan-features">Unlimited chapters<br>Access to tone & voice styles<br>Unlimited book organization<br>Full editing + rewriting tools<br>Early access to new features</p>
+                    <button class="plan-button">
+                        <span class="plan-button-text">Sign Up</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Do I need to be a writer to use Lifescribe?</h3>
+                <p class="faq-answer">Not at all. You simply speak, type, or upload a photo—and Lifescribe's AI transforms it into a beautifully written story in your chosen style. We do the writing, so you can just share your memories.</p>
+                <div class="faq-divider"></div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What is a Life Book?</h3>
+                <p class="faq-answer">A Life Book is your personal collection of chapters, organized into a digital book. Each memory you share becomes a new page in your story. You can add chapters whenever you're ready—and even turn it into a video or print format later.</p>
+                <div class="faq-divider"></div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How does Legacy Quest work?</h3>
+                <p class="faq-answer">Legacy Quest is a guided storytelling journey with 60 unique prompts, like "Your First Job" or "Childhood Home." You can follow the daily path or choose your own adventure. Each quest is designed to support brain health and unlock powerful memories.</p>
+                <div class="faq-divider"></div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What Do I Get With the Free Plan?</h3>
+                <p class="faq-answer">You can create 3 stories for free, using our basic features. It's a great way to try Lifescribe and see how it works. If you love it, you can upgrade to create more stories and unlock everything.</p>
+                <div class="faq-divider"></div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Is Lifescribe easy to use for someone who's not tech-savvy?</h3>
+                <p class="faq-answer">Yes. We designed Lifescribe to be simple, intuitive, and frustration-free. If you can open an app, you can start telling your story. And if you ever need help, we're here.</p>
+                <div class="faq-divider"></div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Begin Your Legacy Today</h2>
+            <p class="cta-subtitle">Your stories matter. Start preserving them today, one chapter at a time.</p>
+            <button class="cta-button">
+                <span class="cta-button-text">Start Free Trial</span>
+            </button>
+        </div>
+        
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <!-- Easy To Use Icon -->
+                    <svg class="icon-easy" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="35" stroke="#212121" stroke-width="2"/>
+                        <path d="M20 40L35 30L60 50M35 30L60 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="benefit-title">Easy To Use</h3>
+                <p class="benefit-description">Designed for all ages—no tech skills required.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <!-- Private & Secure Icon -->
+                    <svg class="icon-secure" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="25" width="40" height="30" stroke="#212121" stroke-width="2"/>
+                        <path d="M18 25V18C18 12 23 7 30 7C37 7 42 12 42 18V25" stroke="#212121" stroke-width="2" fill="none"/>
+                        <circle cx="30" cy="38" r="3" fill="#212121"/>
+                        <path d="M30 41V47" stroke="#212121" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="benefit-title">Private & Secure</h3>
+                <p class="benefit-description">Your memories are yours alone. Nothing is shared without your permission.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <!-- Backed by Brain Science Icon -->
+                    <svg class="icon-brain" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M35 10C25 10 20 15 20 25C20 35 25 40 35 40C45 40 50 35 50 25C50 15 45 10 35 10Z" stroke="#212121" stroke-width="2" fill="none"/>
+                        <path d="M35 10C35 10 30 15 30 25C30 35 35 40 35 40M35 10C35 10 40 15 40 25C40 35 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                        <path d="M20 25C20 25 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                        <path d="M50 25C50 25 55 30 55 35C55 40 50 45 45 45C40 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                        <path d="M35 40V60M25 50H45" stroke="#212121" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="benefit-title">Backed by Brain Science</h3>
+                <p class="benefit-description">Every story prompt is crafted to support memory and cognitive wellness.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <!-- Golden feather with teal heartbeat line -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Feather -->
+                        <path d="M42 6C42 6 36 9.6 30 18C24 26.4 18 36 18 42C18 48 24 54 30 54C36 54 42 48 42 42C42 36 38.4 24 42 6Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
+                        <path d="M30 18C30 18 26.4 24 26.4 30C26.4 36 30 42 30 42" stroke="#FFFFFF" stroke-width="1.2"/>
+                        <!-- Heartbeat line -->
+                        <path d="M6 30L18 30L21.6 24L26.4 36L31.2 18L36 42L40.8 30L54 30" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <p class="footer-email">hello@trylifescribe.com</p>
+        </div>
+    </div>
+</body>
+</html>
