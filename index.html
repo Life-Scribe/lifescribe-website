@@ -69,41 +69,11 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
         
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            position: relative;
-        }
-        
-        .logo-text-container {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-        
-        .logo-text-life {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 36px;
-            line-height: 1;
-            color: #FDB913;
-            margin: 0;
-        }
-        
-        .logo-text-scribe {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 36px;
-            line-height: 1;
-            color: #1D7E6F;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .logo-image {
+            height: 45px;
+            width: auto;
         }
         
         .nav-cta {
@@ -806,20 +776,7 @@
         <!-- Navigation -->
         <div class="navigation">
             <div class="logo-container">
-                <div class="logo-icon">
-                    <!-- New logo design with feather and heartbeat -->
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Feather -->
-                        <path d="M35 5C35 5 29 8.6 25 15C21 21.4 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 35C35 30 32.4 20 35 5Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
-                        <path d="M25 15C25 15 22.4 20 22.4 25C22.4 30 25 35 25 35" stroke="#FFFFFF" stroke-width="1.2"/>
-                        <!-- Heartbeat line -->
-                        <path d="M5 25L15 25L18.6 20L22.4 30L26.2 15L30 35L34.8 25L45 25" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="logo-text-container">
-                    <span class="logo-text-life">Life</span>
-                    <span class="logo-text-scribe">SCRIBE</span>
-                </div>
+                <img src="images/logo.png" alt="LifeScribe" class="logo-image">
             </div>
             <button class="nav-cta">
                 <span class="nav-cta-text">Start Free Trial</span>
