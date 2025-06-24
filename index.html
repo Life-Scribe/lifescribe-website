@@ -2,89 +2,283 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="LifeScribe">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <title>LifeScribe - Every Life Deserves a Legacy</title>
-    <!-- Responsive and font updates deployed -->
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;600&display=swap" as="style">
+    <link rel="preload" href="/critical.css" as="style">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="LifeScribe helps you capture, preserve, and share your life's most precious moments. Transform memories into beautifully written chapters with AI assistance.">
+    <meta name="keywords" content="life stories, memoir writing, AI writing assistant, family legacy, memory preservation, digital storytelling">
+    <meta name="author" content="LifeScribe">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trylifescribe.com/">
+    <meta property="og:title" content="LifeScribe - Every Life Deserves a Legacy">
+    <meta property="og:description" content="Transform your memories into beautifully written chapters. Preserve your legacy for future generations.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://trylifescribe.com/">
+    <meta property="twitter:title" content="LifeScribe - Every Life Deserves a Legacy">
+    <meta property="twitter:description" content="Transform your memories into beautifully written chapters. Preserve your legacy for future generations.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/favicon.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1D7E6F">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical above-the-fold styles loaded inline for performance */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{font-size:16px;scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:#fff;line-height:1.6;color:#000}
+        .container{width:100%;max-width:1440px;margin:0 auto;padding:0 20px}
+        .top-banner{width:100%;background:#1D7E6F;padding:clamp(0.5rem,2vw,0.75rem) 0;text-align:center}
+        .top-banner-text{font-family:'Playfair Display',serif;font-weight:500;color:#fff;font-size:clamp(0.875rem,2vw,1.25rem);line-height:1.4}
+        .navigation{width:100%;background:#fff;padding:clamp(1rem,3vw,1.5rem) 0;position:relative;z-index:1000}
+        .nav-container{display:flex;align-items:center;justify-content:space-between}
+        .logo-container{display:flex;align-items:center;gap:clamp(0.5rem,2vw,1rem)}
+        .logo-icon{width:clamp(35px,6vw,50px);height:clamp(35px,6vw,50px);flex-shrink:0}
+        .logo-text-life{font-family:'Playfair Display',serif;font-weight:400;color:#FDB913;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1}
+        .logo-text-scribe{font-family:'Inter',sans-serif;font-weight:400;color:#1D7E6F;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1;text-transform:uppercase;letter-spacing:0.05em}
+        .nav-cta{background:#FE5E2E;border-radius:50px;padding:clamp(0.5rem,2vw,0.75rem) clamp(1rem,3vw,1.5rem);border:none;cursor:pointer}
+        .nav-cta-text{font-family:'Inter',sans-serif;font-weight:600;color:#fff;font-size:clamp(0.75rem,2vw,0.875rem)}
+        .hero-section{width:100%;min-height:100vh;display:flex;flex-direction:column}
+        .hero-content{display:flex;flex-direction:column;min-height:70vh}
+        .hero-left{background:#1D7E6F;padding:clamp(3rem,8vw,6rem) clamp(2rem,5vw,4rem);display:flex;flex-direction:column;justify-content:center;flex:1}
+        .hero-title{font-family:'Playfair Display',serif;font-weight:400;color:#fff;line-height:1.2;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:clamp(1rem,3vw,2rem)}
+        .hero-subtitle{font-family:'Inter',sans-serif;font-weight:300;color:#fff;line-height:1.4;font-size:clamp(1rem,2.5vw,1.25rem);margin-bottom:clamp(1.5rem,4vw,3rem)}
+        .hero-right{background:url('https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png') center/cover;min-height:40vh;flex:1}
+        @media (min-width:768px){.hero-content{flex-direction:row;min-height:80vh}.hero-left{flex:1;max-width:50%}.hero-right{flex:1;min-height:80vh}}
+    </style>
     
     <style>
+        /* ==========================================================================
+           RESET & BASE STYLES
+           ========================================================================== */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --vh: 1vh; /* Dynamic viewport height */
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
-            overflow-x: hidden;
+            line-height: 1.6;
+            color: #000000;
         }
         
-        /* Main Container */
-        .desktop-1 {
-            position: relative;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        button {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            min-height: 44px; /* iOS touch target minimum */
+            min-width: 44px;
+            touch-action: manipulation; /* Prevents double-tap zoom */
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE CONTAINER SYSTEM
+           ========================================================================== */
+        
+        .container {
             width: 100%;
             max-width: 1440px;
-            min-height: 100vh;
-            background: #FFFFFF;
             margin: 0 auto;
+            padding: 0 20px;
+            padding-left: max(20px, env(safe-area-inset-left));
+            padding-right: max(20px, env(safe-area-inset-right));
         }
+        
+        .container-full {
+            width: 100%;
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE TYPOGRAPHY
+           ========================================================================== */
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height: 1.2;
+            letter-spacing: 0.03em;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: clamp(1rem, 3vw, 2rem);
+        }
+        
+        .hero-title-legacy {
+            font-style: italic;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #FFFFFF;
+            line-height: 1.4;
+            letter-spacing: 0.03em;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: clamp(1.5rem, 4vw, 3rem);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: #1D7E6F;
+            text-align: center;
+            line-height: 1.3;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        }
+        
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: #1D7E6F;
+            line-height: 1.25;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #000000;
+            line-height: 1.4;
+            font-size: clamp(1rem, 2vw, 1.375rem);
+            margin-bottom: 1.25rem;
+        }
+        
+        .feature-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #000000;
+            line-height: 1.6;
+            font-size: clamp(0.9rem, 2vw, 1.25rem);
+        }
+        
+        /* ==========================================================================
+           RESPONSIVE COMPONENTS
+           ========================================================================== */
         
         /* Top Banner */
         .top-banner {
-            position: relative;
             width: 100%;
-            height: 44px;
             background: #1D7E6F;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: clamp(0.5rem, 2vw, 0.75rem) 0;
+            text-align: center;
         }
         
         .top-banner-text {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 500;
-            font-size: 20px;
-            line-height: 32px;
             color: #FFFFFF;
+            font-size: clamp(0.875rem, 2vw, 1.25rem);
+            line-height: 1.4;
         }
         
         /* Navigation */
         .navigation {
-            position: relative;
             width: 100%;
-            height: 120px;
             background: #FFFFFF;
+            padding: clamp(1rem, 3vw, 1.5rem) 0;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 30px 100px;
-            z-index: 10;
-            box-sizing: border-box;
         }
         
         .logo-container {
             display: flex;
             align-items: center;
+            gap: clamp(0.5rem, 2vw, 1rem);
         }
         
-        .logo-image {
-            height: 108px;
-            width: auto;
+        .logo-icon {
+            width: clamp(35px, 6vw, 50px);
+            height: clamp(35px, 6vw, 50px);
+            flex-shrink: 0;
+        }
+        
+        .logo-text-container {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        
+        .logo-text-life {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: #FDB913;
+            font-size: clamp(1.25rem, 4vw, 2.25rem);
+            line-height: 1;
+        }
+        
+        .logo-text-scribe {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #1D7E6F;
+            font-size: clamp(1.25rem, 4vw, 2.25rem);
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1D7E6F;
+            cursor: pointer;
         }
         
         .nav-cta {
-            width: 217px;
-            height: 55px;
             background: #FE5E2E;
             border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
             transition: all 0.3s ease;
             border: none;
         }
@@ -95,78 +289,46 @@
         }
         
         .nav-cta-text {
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 480;
-            font-size: 14px;
-            line-height: 21px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             color: #FFFFFF;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            line-height: 1.2;
         }
         
         /* Hero Section */
         .hero-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            height: 580px;
-            margin: 0 auto;
+            min-height: 100vh;
+            min-height: calc(var(--vh, 1vh) * 100); /* Dynamic viewport height */
+            min-height: -webkit-fill-available; /* iOS Safari fallback */
             display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 70vh;
         }
         
         .hero-left {
-            position: absolute;
-            width: 658px;
-            height: 580px;
-            left: 0px;
-            top: 0px;
             background: #1D7E6F;
-            padding: 60px 80px;
+            padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: left;
-        }
-        
-        .hero-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 48px;
-            line-height: 58px;
-            letter-spacing: 0.02em;
-            color: #F9F3E9;
-            margin-bottom: 24px;
-        }
-        
-        .hero-title-legacy {
-            font-style: italic;
-            color: #F9F3E9;
-        }
-        
-        .hero-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 22px;
-            line-height: 33px;
-            letter-spacing: 0.01em;
-            color: #F9F3E9;
-            margin-bottom: 32px;
-            max-width: 480px;
+            flex: 1;
         }
         
         .hero-cta {
-            width: 272px;
-            height: 68px;
             background: #FE5E2E;
             border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            padding: clamp(0.75rem, 3vw, 1rem) clamp(2rem, 5vw, 3rem);
             transition: all 0.3s ease;
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
             border: none;
+            align-self: flex-start;
         }
         
         .hero-cta:hover {
@@ -175,273 +337,231 @@
         }
         
         .hero-cta-text {
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 480;
-            font-size: 14px;
-            line-height: 21px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
             color: #FFFFFF;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 1.2;
+            letter-spacing: 0.03em;
         }
         
         .hero-tagline {
             font-family: 'Inter', sans-serif;
             font-style: italic;
             font-weight: 400;
-            font-size: 17px;
-            line-height: 24px;
-            color: #F9F3E9;
-            opacity: 0.8;
+            color: #FFFFFF;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            line-height: 1.4;
+            letter-spacing: 0.03em;
         }
         
         .hero-right {
-            position: absolute;
-            width: 782px;
-            height: 580px;
-            left: 658px;
-            top: 0px;
-            background: url('Hero.jpg') center/cover;
+            background: linear-gradient(135deg, #1D7E6F 0%, #0D5B4F 100%); /* Fallback */
+            min-height: 40vh;
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-right.loaded {
+            background-image: url('https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png');
         }
         
         /* Quote Section */
         .quote-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            height: 531px;
-            margin: 0 auto;
             background: #FE5E2E;
+            padding: clamp(3rem, 8vw, 6rem) 0;
+        }
+        
+        .quote-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 0 219px;
-            box-sizing: border-box;
+            gap: clamp(2rem, 5vw, 4rem);
         }
         
         .oprah-image {
-            width: 297px;
-            height: 315px;
-            background: url('images/Oprah.png') center/cover;
+            width: clamp(200px, 40vw, 300px);
+            height: clamp(240px, 48vw, 360px);
+            background: url('https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png') center/cover;
             border-radius: 10px;
+            flex-shrink: 0;
         }
         
         .quote-content {
-            margin-left: 67px;
-            flex: 1;
+            text-align: center;
+            max-width: 600px;
         }
         
         .quote-header {
-            font-family: 'Inter';
+            font-family: 'Inter', sans-serif;
             font-style: italic;
             font-weight: 300;
-            font-size: 31px;
-            line-height: 39px;
             color: #000000;
-            margin-bottom: 20px;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 1.25rem;
         }
         
         .quote-text {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 240;
-            font-size: 50px;
-            line-height: 66px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
             color: #000000;
-            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            line-height: 1.3;
+            margin-bottom: 1.25rem;
         }
         
         .quote-author {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 255;
-            font-size: 26px;
-            line-height: 31px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
             color: #000000;
+            font-size: clamp(1rem, 2vw, 1.25rem);
         }
         
         .quote-author::before {
             content: "• ";
-            margin-right: 5px;
+            margin-right: 0.5rem;
         }
         
         /* How it Works Section */
         .how-it-works {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 50px;
-            line-height: 67px;
-            color: #1D7E6F;
-            text-align: center;
-            margin-bottom: 42px;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
         
         .steps-container {
-            display: flex;
-            gap: 15px;
-            padding: 0 37px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            margin-top: clamp(2rem, 4vw, 3rem);
         }
         
         .step-card {
-            width: 262px;
-            height: 401px;
             background: #F6F6F6;
             border: 1px solid #1D7E6F;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 27px 28px;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
         }
         
         .step-image {
-            width: 207px;
-            height: 163px;
+            width: 100%;
+            height: clamp(120px, 20vw, 160px);
             background-position: center;
             background-size: cover;
-            margin-bottom: 15px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background-color: #f0f0f0; /* Fallback */
+            transition: opacity 0.3s ease;
+        }
+        
+        .step-image.loading {
+            opacity: 0.7;
+        }
+        
+        .step-image.loaded {
+            opacity: 1;
         }
         
         .step-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 32px;
             color: #1D7E6F;
-            text-align: center;
-            margin-bottom: 14px;
-            height: 64px;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            min-height: 3rem;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         
         .step-description {
-            font-family: 'Inter';
-            font-style: normal;
+            font-family: 'Inter', sans-serif;
             font-weight: 300;
-            font-size: 16px;
-            line-height: 19px;
             color: #000000;
-            text-align: center;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            line-height: 1.5;
         }
         
         /* Sign of the Times Section */
         .sign-of-times {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            height: 550px;
-            margin: 0 auto;
             background: #F4F0E7;
-            padding: 90px 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
+        }
+        
+        .sign-container {
             display: flex;
-            align-items: center;
-            box-sizing: border-box;
+            flex-direction: column;
+            gap: clamp(2rem, 5vw, 4rem);
         }
         
         .sign-content {
-            width: 45%;
-            padding-left: 130px;
-            max-width: 480px;
+            max-width: 500px;
         }
         
         .sign-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 56px;
-            line-height: 72px;
             color: #1D7E6F;
-            margin-bottom: 35px;
-            white-space: nowrap;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
         }
         
         .sign-description {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 280;
-            font-size: 28px;
-            line-height: 42px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
             color: #000000;
-            max-width: 470px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.5;
         }
         
         .sign-images {
-            width: 55%;
-            display: flex;
-            gap: 15px;
-            padding-left: 120px;
-            padding-right: 40px;
-            align-items: center;
-            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            overflow: hidden;
         }
         
         .sign-image {
-            flex: 1;
-            height: 370px;
+            width: 100%;
+            height: clamp(200px, 30vw, 300px);
             background-size: cover;
             background-position: center;
             border-radius: 8px;
         }
         
-        /* Features Sections */
+        /* Feature Sections */
         .feature-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 60px 126px;
+            padding: clamp(3rem, 8vw, 6rem) 0;
+        }
+        
+        .feature-container {
             display: flex;
+            flex-direction: column;
+            gap: clamp(2rem, 5vw, 4rem);
             align-items: center;
-            box-sizing: border-box;
         }
         
-        .feature-left {
-            flex: 1;
-        }
-        
-        .feature-right {
-            flex: 1;
-        }
-        
-        .feature-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 40px;
-            line-height: 50px;
-            color: #1D7E6F;
-            margin-bottom: 6px;
-        }
-        
-        .feature-subtitle {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 30px;
-            color: #000000;
-            margin-bottom: 20px;
-        }
-        
-        .feature-description {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 300;
-            font-size: 20px;
-            line-height: 32px;
-            color: #000000;
+        .feature-content {
+            max-width: 600px;
         }
         
         .feature-image {
-            width: 558px;
-            height: 388px;
+            width: 100%;
+            max-width: 600px;
+            height: clamp(250px, 40vw, 400px);
             background-size: cover;
             background-position: center;
             border-radius: 25px;
@@ -449,103 +569,92 @@
         
         /* Pricing Section */
         .pricing-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            height: 844px;
-            margin: 0 auto;
             background: #1D7E6F;
-            padding: 54px 57px;
-            box-sizing: border-box;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
         
         .pricing-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 375;
-            font-size: 50px;
-            line-height: 32px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
             color: #FFFFFF;
             text-align: center;
-            margin-bottom: 101px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.3;
+            margin-bottom: clamp(2rem, 5vw, 4rem);
         }
         
         .pricing-cards {
-            display: flex;
-            gap: 63px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .pricing-card {
-            width: 400px;
-            height: 521px;
             background: #FFFFFF;
             border: 3px solid #FE5E2E;
             border-radius: 20px;
-            padding: 18px 22px;
+            padding: clamp(1.5rem, 4vw, 2rem);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
         
         .plan-name {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 500;
-            font-size: 20px;
-            line-height: 32px;
             color: #000000;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
         }
         
         .plan-price {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 500;
-            font-size: 45px;
-            line-height: 32px;
             color: #FE5E2E;
-            margin: 8px 0 19px 0;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin: 0.5rem 0 1rem 0;
         }
         
         .plan-divider {
-            width: 355px;
-            height: 0px;
-            border: 1px solid #000000;
-            margin-bottom: 20px;
+            width: 100%;
+            height: 1px;
+            border: none;
+            background: #000000;
+            margin-bottom: 1.25rem;
         }
         
         .plan-description {
-            font-family: 'Inter';
-            font-style: normal;
+            font-family: 'Inter', sans-serif;
             font-weight: 300;
-            font-size: 22px;
-            line-height: 28px;
             color: #000000;
-            margin-bottom: 17px;
-            height: 84px;
+            font-size: clamp(1rem, 2vw, 1.375rem);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            flex-grow: 1;
         }
         
         .plan-features {
-            font-family: 'Inter';
-            font-style: normal;
+            font-family: 'Inter', sans-serif;
             font-weight: 300;
-            font-size: 20px;
-            line-height: 30px;
             color: #000000;
-            margin-bottom: 57px;
-            height: 150px;
+            font-size: clamp(0.9rem, 2vw, 1.25rem);
+            line-height: 1.5;
+            margin-bottom: 2rem;
         }
         
         .plan-button {
-            width: 355px;
-            height: 50px;
+            width: 100%;
             background: #FE5E2E;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            border-radius: 8px;
+            padding: clamp(0.75rem, 2vw, 1rem);
             transition: all 0.3s ease;
             border: none;
-            border-radius: 5px;
         }
         
         .plan-button:hover {
@@ -554,120 +663,104 @@
         }
         
         .plan-button-text {
-            font-family: 'Inter';
-            font-style: normal;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 20px;
-            line-height: 30px;
             color: #FFFFFF;
+            font-size: clamp(1rem, 2vw, 1.25rem);
         }
         
         /* FAQ Section */
         .faq-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 60px 270px;
-            box-sizing: border-box;
+            padding: clamp(3rem, 8vw, 6rem) 0;
         }
         
         .faq-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 240;
-            font-size: 50px;
-            line-height: 67px;
-            letter-spacing: -0.04em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
             color: #000000;
             text-align: center;
-            margin-bottom: 53px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+        
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .faq-item {
-            margin-bottom: 45px;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            text-align: center;
         }
         
         .faq-question {
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 200;
-            font-size: 27px;
-            line-height: 36px;
-            letter-spacing: -0.04em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
             color: #000000;
-            text-align: center;
-            margin-bottom: 17px;
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
         }
         
         .faq-answer {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 200;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-            letter-spacing: -0.04em;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
             color: #000000;
-            margin-bottom: 24px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.5;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
         }
         
         .faq-divider {
-            width: 899.03px;
-            height: 0px;
-            border: 1px solid #000000;
+            width: 100%;
+            max-width: 600px;
+            height: 1px;
+            border: none;
+            background: #000000;
             margin: 0 auto;
         }
         
         /* CTA Section */
         .cta-section {
-            position: relative;
-            width: calc(100% - 284px);
-            max-width: 1158px;
-            height: 345px;
-            margin: 60px auto;
+            width: 100%;
             background: #FE5E2E;
             border-radius: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin: clamp(2rem, 5vw, 4rem) auto;
+            max-width: 1200px;
+            padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 5vw, 4rem);
+            text-align: center;
         }
         
         .cta-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 50px;
-            line-height: 67px;
-            text-align: center;
-            letter-spacing: -0.04em;
             color: #FFFFFF;
-            margin-bottom: 17px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
         }
         
         .cta-subtitle {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 32px;
-            text-align: center;
-            letter-spacing: -0.04em;
             color: #FFFFFF;
-            margin-bottom: 53px;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
         }
         
         .cta-button {
-            width: 493px;
-            height: 53px;
             background: #FFFFFF;
             border: 1px solid #000000;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(2rem, 5vw, 3rem);
             transition: all 0.3s ease;
         }
         
@@ -677,772 +770,433 @@
         }
         
         .cta-button-text {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 25px;
-            line-height: 33px;
-            text-align: center;
-            letter-spacing: -0.04em;
             color: #000000;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
         }
         
         /* Benefits Section */
         .benefits-section {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            margin: 60px auto;
-            display: flex;
-            justify-content: space-around;
-            padding: 0 199px;
-            box-sizing: border-box;
+            padding: clamp(3rem, 8vw, 4rem) 0;
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(2rem, 5vw, 3rem);
         }
         
         .benefit-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 278px;
+            text-align: center;
         }
         
         .benefit-icon {
-            width: 153px;
-            height: 153px;
-            margin-bottom: 0px;
+            width: clamp(80px, 15vw, 120px);
+            height: clamp(80px, 15vw, 120px);
+            margin: 0 auto 1rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .benefit-icon-image {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-        
         .benefit-title {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 27px;
-            line-height: 36px;
-            letter-spacing: -0.04em;
             color: #000000;
-            text-align: center;
-            margin-bottom: 17px;
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
         }
         
         .benefit-description {
-            font-family: 'Inter';
-            font-style: normal;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-            letter-spacing: -0.04em;
             color: #000000;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.5;
+            letter-spacing: -0.04em;
         }
         
         /* Footer */
         .footer {
-            position: relative;
             width: 100%;
-            max-width: 1440px;
-            margin: 60px auto 0;
             border-top: 1px solid #000000;
-            padding: 48px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: clamp(2rem, 4vw, 3rem) 0;
+            text-align: center;
         }
         
         .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-        
-        .footer-logo-image {
-            height: 175px;
-            width: auto;
+            margin-bottom: 1rem;
         }
         
         .footer-email {
-            font-family: 'Playfair Display';
-            font-style: normal;
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 25px;
-            line-height: 33px;
-            text-align: center;
-            letter-spacing: -0.04em;
             color: #000000;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.3;
+            letter-spacing: -0.04em;
         }
         
-        /* Icon styles */
-        .icon-easy {
-            width: 80px;
-            height: 80px;
-        }
-        
-        .icon-secure {
-            width: 60px;
-            height: 60px;
-        }
-        
+        /* Icon Responsive Styles */
+        .icon-easy,
+        .icon-secure,
         .icon-brain {
-            width: 70px;
-            height: 70px;
+            width: 100%;
+            height: 100%;
+            max-width: 100px;
+            max-height: 100px;
         }
-
-        /* ========================================
-           RESPONSIVE DESIGN - MEDIA QUERIES
-           ======================================== */
-
-        /* Tablet Styles (768px - 1024px) */
-        @media screen and (max-width: 1024px) {
-            .desktop-1 {
-                width: 100%;
-                max-width: 1024px;
-                height: auto;
+        
+        /* ==========================================================================
+           RESPONSIVE BREAKPOINTS
+           ========================================================================== */
+        
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
             }
-
-            .top-banner {
-                width: 100%;
-                padding: 0 20px;
-            }
-
-            .navigation {
-                width: 100%;
-                padding: 20px 40px;
-                height: 100px;
-            }
-
-            .logo-image {
-                height: 80px;
-            }
-
-            .nav-cta {
-                width: 180px;
-                height: 45px;
-            }
-
-            .hero-section {
-                width: 100%;
-                height: auto;
-                flex-direction: column;
-                position: relative;
-                top: 144px;
-            }
-
-            .hero-left {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding: 40px;
-                text-align: center;
-            }
-
-            .hero-right {
-                width: 100%;
-                height: 400px;
-                position: relative;
-                left: 0;
-            }
-
-            .hero-title {
-                font-size: 40px;
-                line-height: 48px;
-            }
-
-            .hero-subtitle {
-                font-size: 20px;
-                line-height: 28px;
-                max-width: 100%;
-            }
-
-            .quote-section {
-                height: auto;
-                padding: 40px;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .quote-content {
-                margin-left: 0;
-                margin-top: 30px;
-            }
-
-            .how-it-works {
-                padding: 40px 20px;
-            }
-
-            .steps-container {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-                padding: 0;
-            }
-
-            .step-card {
-                width: calc(50% - 10px);
-                min-width: 250px;
-            }
-
-            .sign-of-times {
-                height: auto;
-                flex-direction: column;
-                padding: 40px 20px;
-                text-align: center;
-            }
-
-            .sign-content {
-                width: 100%;
-                padding-left: 0;
-                margin-bottom: 30px;
-            }
-
-            .sign-images {
-                width: 100%;
-                padding: 0;
-                justify-content: center;
-            }
-
-            .feature-section {
-                padding: 40px 60px;
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .feature-image {
-                width: 100%;
-                max-width: 500px;
-            }
-
-            .pricing-section {
-                height: auto;
-                padding: 40px 30px;
-            }
-
-            .pricing-cards {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
-
-            .faq-section {
-                padding: 40px 60px;
-            }
-
-            .cta-section {
-                width: calc(100% - 40px);
-                margin: 40px 20px;
-                padding: 40px 20px;
-            }
-
-            .benefits-section {
-                padding: 40px 60px;
-                flex-wrap: wrap;
-                gap: 30px;
-                justify-content: center;
-            }
-        }
-
-        /* Mobile Styles (up to 768px) */
-        @media screen and (max-width: 768px) {
-            .desktop-1 {
-                width: 100%;
-                height: auto;
-            }
-
-            .top-banner {
-                width: 100%;
-                height: auto;
-                padding: 10px 15px;
-            }
-
-            .top-banner-text {
-                font-size: 16px;
-                line-height: 24px;
-                text-align: center;
-            }
-
-            .navigation {
-                width: 100%;
-                height: 80px;
-                padding: 15px 20px;
+            
+            .hero-content {
                 flex-direction: row;
-                justify-content: space-between;
+                min-height: 80vh;
             }
-
-            .logo-image {
-                height: 60px;
-            }
-
-            .nav-cta {
-                width: 150px;
-                height: 40px;
-            }
-
-            .nav-cta-text {
-                font-size: 12px;
-            }
-
-            .hero-section {
-                width: 100%;
-                height: auto;
-                flex-direction: column;
-                position: relative;
-                top: 100px;
-            }
-
+            
             .hero-left {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding: 30px 20px;
-                text-align: center;
+                flex: 1;
+                max-width: 50%;
             }
-
-            .hero-title {
-                font-size: 32px;
-                line-height: 38px;
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-                line-height: 26px;
-                margin-bottom: 25px;
-                max-width: 100%;
-            }
-
-            .hero-cta {
-                width: 100%;
-                max-width: 250px;
-                height: 55px;
-                margin: 0 auto 15px;
-            }
-
+            
             .hero-right {
-                width: 100%;
-                height: 300px;
-                position: relative;
-                left: 0;
+                flex: 1;
+                min-height: 80vh;
             }
-
-            .hero-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            
+            .quote-container {
+                flex-direction: row;
+                text-align: left;
             }
-
-            .quote-section {
-                height: auto;
-                padding: 30px 20px;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .oprah-image {
-                width: 200px;
-                height: 250px;
-                margin: 0 auto 20px;
-            }
-
+            
             .quote-content {
-                margin-left: 0;
+                text-align: left;
             }
-
-            .quote-text {
-                font-size: 32px;
-                line-height: 42px;
+            
+            .sign-container {
+                flex-direction: row;
+                align-items: center;
             }
-
-            .how-it-works {
-                padding: 30px 20px;
+            
+            .feature-container {
+                flex-direction: row;
             }
-
+            
+            .feature-container.reverse {
+                flex-direction: row-reverse;
+            }
+            
             .steps-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 0;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
-
-            .step-card {
-                width: 100%;
-                max-width: 300px;
+        }
+        
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 60px;
             }
-
-            .sign-of-times {
-                height: auto;
-                flex-direction: column;
-                padding: 30px 20px;
-                text-align: center;
+            
+            .steps-container {
+                grid-template-columns: repeat(5, 1fr);
             }
-
-            .sign-content {
-                width: 100%;
-                padding-left: 0;
-                margin-bottom: 20px;
-            }
-
-            .sign-title {
-                font-size: 36px;
-                line-height: 44px;
-                white-space: normal;
-            }
-
-            .sign-description {
-                font-size: 20px;
-                line-height: 28px;
-            }
-
-            .sign-images {
-                width: 100%;
-                padding: 0;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .sign-image {
-                height: 250px;
-            }
-
-            .feature-section {
-                padding: 30px 20px;
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .feature-image {
-                width: 100%;
-                max-width: 350px;
-                height: 250px;
-            }
-
-            .feature-title {
-                font-size: 28px;
-                line-height: 36px;
-            }
-
-            .pricing-section {
-                height: auto;
-                padding: 30px 20px;
-            }
-
+            
             .pricing-cards {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
             }
-
-            .pricing-card {
-                width: 100%;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-
-            .faq-section {
-                padding: 30px 20px;
-            }
-
-            .faq-title {
-                font-size: 32px;
-                line-height: 42px;
-            }
-
-            .faq-question {
-                font-size: 20px;
-                line-height: 28px;
-            }
-
-            .cta-section {
-                width: calc(100% - 40px);
-                margin: 30px 20px;
-                padding: 30px 20px;
-                border-radius: 25px;
-            }
-
-            .cta-title {
-                font-size: 28px;
-                line-height: 36px;
-            }
-
-            .cta-button {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .benefits-section {
-                padding: 30px 20px;
-                flex-direction: column;
-                gap: 30px;
-                align-items: center;
-            }
-
-            .benefit-item {
-                width: 100%;
-                max-width: 250px;
-            }
-
-            /* Adjust grid layouts for mobile */
-            .stats-grid,
-            .how-it-works-grid,
-            .pricing-grid,
-            .benefits-section {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .pricing-card {
-                width: 100%;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-
-            /* Typography adjustments for mobile */
-            .section-title {
-                font-size: 28px;
-                line-height: 34px;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-                line-height: 24px;
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            /* Footer adjustments */
-            .footer {
-                width: 100%;
-                padding: 30px 20px;
-                text-align: center;
-            }
-
-            .footer-logo-image {
-                height: 100px;
-            }
-
-            .footer-email {
-                font-size: 18px;
-                line-height: 24px;
+            
+            .benefits-container {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
-
-        /* Large Mobile Styles (480px - 768px) */
-        @media screen and (min-width: 481px) and (max-width: 768px) {
-            .hero-title {
-                font-size: 36px;
-                line-height: 42px;
-            }
-
-            .hero-subtitle {
-                font-size: 19px;
-                line-height: 27px;
-            }
-
-            .navigation {
-                height: 90px;
-                padding: 20px 25px;
-            }
-
-            .logo-image {
-                height: 70px;
+        
+        /* Large Desktop Styles */
+        @media (min-width: 1440px) {
+            .container {
+                padding: 0 100px;
             }
         }
-
-        /* Small Mobile Styles (up to 480px) */
-        @media screen and (max-width: 480px) {
-            .top-banner-text {
-                font-size: 14px;
-                line-height: 20px;
+        
+        /* Mobile Menu Styles */
+        @media (max-width: 767px) {
+            .mobile-menu-toggle {
+                display: block;
             }
-
-            .navigation {
-                height: 70px;
-                padding: 10px 15px;
-            }
-
-            .logo-image {
-                height: 50px;
-            }
-
+            
             .nav-cta {
-                width: 120px;
-                height: 35px;
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
             }
-
-            .nav-cta-text {
-                font-size: 11px;
+            
+            .hero-section {
+                min-height: auto;
             }
-
-            .hero-title {
-                font-size: 28px;
-                line-height: 34px;
+            
+            .hero-content {
+                min-height: auto;
             }
-
-            .hero-subtitle {
-                font-size: 16px;
-                line-height: 24px;
-            }
-
+            
             .hero-left {
-                padding: 25px 15px;
+                padding: 3rem 2rem;
             }
-
-            .section-title {
-                font-size: 24px;
-                line-height: 30px;
+            
+            .hero-right {
+                min-height: 50vh;
             }
-
-            .pricing-card {
-                max-width: 300px;
-                padding: 25px 20px;
+            
+            .sign-images {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        /* Ensure images are responsive */
-        @media screen and (max-width: 1024px) {
-            img {
-                max-width: 100%;
-                height: auto;
+        
+        /* iPhone SE and smaller devices */
+        @media (max-width: 375px) {
+            .container {
+                padding: 0 16px;
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
             }
-
-            .hero-image,
-            .benefit-icon-image,
-            .testimonial-image {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
+            
+            .hero-left {
+                padding: 2rem 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: clamp(1.75rem, 8vw, 2.5rem);
+                line-height: 1.1;
+            }
+            
+            .nav-cta {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+            }
+            
+            .pricing-cards {
+                gap: 1rem;
+            }
+            
+            .pricing-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+        
+        /* iOS-specific fixes */
+        .ios-scroll-fix {
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+        }
+        
+        /* Fix iOS form elements */
+        input, textarea, select {
+            font-size: 16px; /* Prevents zoom on iOS */
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        
+        /* Fix position fixed elements on iOS */
+        .fixed-element {
+            position: fixed;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        
+        /* Prevent iOS bounce effect */
+        body {
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Performance Optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            /* Optional: Add dark mode styles if needed */
+        }
+        
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            .step-card,
+            .pricing-card {
+                border-width: 2px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="desktop-1">
-        <!-- Top Banner -->
-        <div class="top-banner">
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
             <div class="top-banner-text">Build your Life Book today — your first chapters are on us.</div>
         </div>
-        
-        <!-- Navigation -->
-        <div class="navigation">
-            <div class="logo-container">
-                <img src="Logo 2.png" alt="LifeScribe" class="logo-image">
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <!-- New logo design with feather and heartbeat -->
+                        <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="LifeScribe logo - feather with heartbeat line">
+                            <!-- Feather -->
+                            <path d="M35 5C35 5 29 8.6 25 15C21 21.4 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 35C35 30 32.4 20 35 5Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
+                            <path d="M25 15C25 15 22.4 20 22.4 25C22.4 30 25 35 25 35" stroke="#FFFFFF" stroke-width="1.2"/>
+                            <!-- Heartbeat line -->
+                            <path d="M5 25L15 25L18.6 20L22.4 30L26.2 15L30 35L34.8 25L45 25" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text-container">
+                        <span class="logo-text-life">Life</span>
+                        <span class="logo-text-scribe">SCRIBE</span>
+                    </div>
+                </div>
+                <button class="nav-cta" aria-label="Start your free trial of LifeScribe">
+                    <span class="nav-cta-text">Start Free Trial</span>
+                </button>
             </div>
-            <button class="nav-cta">
-                <span class="nav-cta-text">Start Free Trial</span>
-            </button>
         </div>
-        
-        <!-- Hero Section -->
-        <div class="hero-section">
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
             <div class="hero-left">
-                <h1 class="hero-title">Every Life Deserves a <span class="hero-title-legacy">Legacy</span></h1>
-                <p class="hero-subtitle">LifeScribe helps you capture your unique life experiences and preserve them for generations to come.</p>
-                <button class="hero-cta">
+                <h1 class="hero-title">Every Life Deserves<br>a <span class="hero-title-legacy">Legacy</span></h1>
+                <p class="hero-subtitle">Lifescribe helps you capture your unique life experiences and preserve them for generations to come.</p>
+                <button class="hero-cta" aria-label="Begin your free trial and start creating your life story">
                     <span class="hero-cta-text">Start Free Trial</span>
                 </button>
                 <p class="hero-tagline">Start building your legacy today.</p>
             </div>
-            <div class="hero-right"></div>
+            <div class="hero-right" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
         </div>
-        
-        <!-- Quote Section -->
-        <div class="quote-section">
-            <div class="oprah-image"></div>
-            <div class="quote-content">
-                <div class="quote-header">The Power of Story</div>
-                <div class="quote-text">"The most powerful stories are the ones we tell ourselves — and choose to share."</div>
-                <div class="quote-author">Oprah Winfrey</div>
+    </section>
+    
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="oprah-image"></div>
+                <div class="quote-content">
+                    <div class="quote-header">The Power of Story</div>
+                    <div class="quote-text">"The most powerful stories are the ones we tell ourselves — and choose to share."</div>
+                    <div class="quote-author">Oprah Winfrey</div>
+                </div>
             </div>
         </div>
-        
-        <!-- How it Works Section -->
-        <div class="how-it-works">
+    </section>
+    
+    <!-- How it Works Section -->
+    <section class="how-it-works">
+        <div class="container">
             <h2 class="section-title">How it Works</h2>
             <div class="steps-container">
                 <div class="step-card">
-                    <div class="step-image" style="background-image: url('How it Works 1.jpg');"></div>
+                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
                     <h3 class="step-title">Speak, Type, or Upload Photos</h3>
                     <p class="step-description">Let your story flow naturally—talk to the app, write it down, or upload photo albums to get started.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" style="background-image: url('How it Works 2.jpg');"></div>
+                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
                     <h3 class="step-title">Choose a Style or Director</h3>
-                    <p class="step-description">Select a literary style or visual flair - from Hemingway to Hitchcock - to match the feel of your memory.</p>
+                    <p class="step-description">Select a literary tone or visual flair—from Hemingway to Hitchcock—to match the feel of your memory.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" style="background-image: url('How it Works 3.jpg');"></div>
+                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png"></div>
                     <h3 class="step-title">Let AI Transform Your Story</h3>
-                    <p class="step-description">LifeScribe transforms your memory into a beautifully written chapter and a personalized illustration.</p>
+                    <p class="step-description">Lifescribe transforms your memory into a beautifully written chapter and a personalized illustration.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" style="background-image: url('How it Works 4.jpg');"></div>
+                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo_bg.png"></div>
                     <h3 class="step-title">Add To Your Life Book</h3>
                     <p class="step-description">Save your story in a personal book that organizes your memories by theme, time, or milestones.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" style="background-image: url('How it Works 5.jpg');"></div>
+                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/google_logo.png"></div>
                     <h3 class="step-title">Save It With Future Generations</h3>
                     <p class="step-description">Keep it private, print it, or share it with loved ones—it's your story, told your way.</p>
                 </div>
             </div>
         </div>
-        
-        <!-- Sign of the Times Section -->
-        <div class="sign-of-times">
-            <div class="sign-content">
-                <h2 class="sign-title">Sign of the Times</h2>
-                <p class="sign-description">Your story is part of something bigger. LifeScribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
-            </div>
-            <div class="sign-images">
-                <div class="sign-image" style="background-image: url('images/NL_1001_700x700 1.png');"></div>
-                <div class="sign-image" style="background-image: url('images/Elvis_Presley_Jailhouse_Rock.jpg');"></div>
-            </div>
-        </div>
-        
-        <!-- Feature Section 1 -->
-        <div class="feature-section">
-            <div class="feature-left">
-                <div class="feature-image" style="background-image: url('Your Story 1.jpg');"></div>
-            </div>
-            <div class="feature-right" style="margin-left: 83px;">
-                <h2 class="feature-title">Your Story, Organized Beautifully</h2>
-                <p class="feature-subtitle">Just speak or type — we'll do the writing.</p>
-                <p class="feature-description">Whether you're remembering your first home, a special trip, or an old love, LifeScribe helps you bring it to life. Choose a literary voice, write as much or as little as you like, and we'll take care of the rest—creating chapters that feel personal and timeless.</p>
+    </section>
+    
+    <!-- Sign of the Times Section -->
+    <section class="sign-of-times">
+        <div class="container">
+            <div class="sign-container">
+                <div class="sign-content">
+                    <h2 class="sign-title">Sign of the Times</h2>
+                    <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
+                </div>
+                <div class="sign-images">
+                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
+                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
+                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png"></div>
+                </div>
             </div>
         </div>
-        
-        <!-- Feature Section 2 -->
-        <div class="feature-section">
-            <div class="feature-left">
-                <h2 class="feature-title">Not Sure What to Write? We'll Guide You.</h2>
-                <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
-                <p class="feature-description">Legacy Quest is our interactive storytelling journey. Each day, you'll get a new memory prompt designed to spark rich, personal stories—like "Your First Wheels" or "The Teacher Who Understood You." You can follow our guided path or jump around based on what speaks to you.</p>
-            </div>
-            <div class="feature-right" style="margin-left: 61px;">
-                <div class="feature-image" style="background-image: url('Your Story 2.jpg');"></div>
+    </section>
+    
+    <!-- Feature Section 1 -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-container">
+                <div class="feature-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
+                <div class="feature-content">
+                    <h2 class="feature-title">Your Story, Organized Beautifully</h2>
+                    <p class="feature-subtitle">Just speak or type — we'll do the writing.</p>
+                    <p class="feature-description">Whether you're remembering your first home, a special trip, or an old love, Lifescribe helps you bring it to life. Choose a literary voice, write as much or as little as you like, and we'll take care of the rest—creating chapters that feel personal and timeless.</p>
+                </div>
             </div>
         </div>
-        
-        <!-- Pricing Section -->
-        <div class="pricing-section">
+    </section>
+    
+    <!-- Feature Section 2 -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-container reverse">
+                <div class="feature-content">
+                    <h2 class="feature-title">Not Sure What to Write? We'll Guide You.</h2>
+                    <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
+                    <p class="feature-description">Legacy Quest is our interactive storytelling journey. Each day, you'll get a new memory prompt designed to spark rich, personal stories—like "Your First Wheels" or "The Teacher Who Understood You." You can follow our guided path or jump around based on what speaks to you.</p>
+                </div>
+                <div class="feature-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
             <h2 class="pricing-title">Simple, Transparent Pricing</h2>
             <div class="pricing-cards">
                 <div class="pricing-card">
                     <div class="plan-name">Start</div>
                     <div class="plan-price">FREE</div>
-                    <div class="plan-divider"></div>
+                    <hr class="plan-divider">
                     <p class="plan-description">Begin your storytelling journey with essential features to capture key moments.</p>
-                    <p class="plan-features">3 AI transformed Chapters<br>Choose your writing style, illustration style and mood<br>Save to your personal Book<br>Simple Chapter Editor<br>Access on all devices</p>
+                    <p class="plan-features">3 AI-generated chapters<br>Choose tone & writing style<br>Save to personal book<br>Simple story editor<br>Access on all devices</p>
                     <button class="plan-button">
                         <span class="plan-button-text">Try For Free</span>
                     </button>
@@ -1450,9 +1204,9 @@
                 <div class="pricing-card">
                     <div class="plan-name">Plus</div>
                     <div class="plan-price">$4.99/mo</div>
-                    <div class="plan-divider"></div>
+                    <hr class="plan-divider">
                     <p class="plan-description">Expand your story with increased chapter limits and more customization options.</p>
-                    <p class="plan-features">5 Chapters per month<br>Choose your writing style, illustration style and mood<br>Save and organize multiple Books<br>Edit and rewrite story's<br>Family Sharing via the Family Hub</p>
+                    <p class="plan-features">5 total chapters/month<br>Custom tone & voice options<br>Save and organize multiple books<br>Edit, regenerate, or rewrite stories<br>Priority email support</p>
                     <button class="plan-button">
                         <span class="plan-button-text">Sign Up</span>
                     </button>
@@ -1460,52 +1214,58 @@
                 <div class="pricing-card">
                     <div class="plan-name">Unlimited Legacy</div>
                     <div class="plan-price">$9.99/mo</div>
-                    <div class="plan-divider"></div>
+                    <hr class="plan-divider">
                     <p class="plan-description">Write your life's story without boundaries—unlimited chapters, unlimited possibilities.</p>
-                    <p class="plan-features">Unlimited Chapters<br>Enhanced AI writing and illustration styles<br>Unlimited Books<br>Full editing and rewriting tool<br>Early Access to new feature<br>Full social media sharing</p>
+                    <p class="plan-features">Unlimited chapters<br>Access to tone & voice styles<br>Unlimited book organization<br>Full editing + rewriting tools<br>Early access to new features</p>
                     <button class="plan-button">
                         <span class="plan-button-text">Sign Up</span>
                     </button>
                 </div>
             </div>
         </div>
-        
-        <!-- FAQ Section -->
-        <div class="faq-section">
-            <h2 class="faq-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">Do I need to be a writer to use LifeScribe?</h3>
-                <p class="faq-answer">Not at all. You simply speak, type, or upload a photo—and LifeScribe's AI transforms it into a beautifully written story in your chosen style. We do the writing, so you can just share your memories.</p>
-                <div class="faq-divider"></div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">What is a Life Book?</h3>
-                <p class="faq-answer">A Life Book is your personal collection of chapters, organized into a digital book. Each memory you share becomes a new page in your story. You can add chapters whenever you're ready—and even turn it into a video or print format later.</p>
-                <div class="faq-divider"></div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">How does Legacy Quest work?</h3>
-                <p class="faq-answer">Legacy Quest is a guided storytelling journey with 60 unique prompts, like "Your First Job" or "Childhood Home." You can follow the daily path or choose your own adventure. Each quest is designed to support brain health and unlock powerful memories.</p>
-                <div class="faq-divider"></div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">What Do I Get With the Free Plan?</h3>
-                <p class="faq-answer">You can create 3 stories for free, using our basic features. It's a great way to try LifeScribe and see how it works. If you love it, you can upgrade to create more stories and unlock everything.</p>
-                <div class="faq-divider"></div>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">Is LifeScribe easy to use for someone who's not tech-savvy?</h3>
-                <p class="faq-answer">Yes. We designed LifeScribe to be simple, intuitive, and frustration-free. If you can open an app, you can start telling your story. And if you ever need help, we're here.</p>
-                <div class="faq-divider"></div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-content">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need to be a writer to use Lifescribe?</h3>
+                    <p class="faq-answer">Not at all. You simply speak, type, or upload a photo—and Lifescribe's AI transforms it into a beautifully written story in your chosen style. We do the writing, so you can just share your memories.</p>
+                    <hr class="faq-divider">
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What is a Life Book?</h3>
+                    <p class="faq-answer">A Life Book is your personal collection of chapters, organized into a digital book. Each memory you share becomes a new page in your story. You can add chapters whenever you're ready—and even turn it into a video or print format later.</p>
+                    <hr class="faq-divider">
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">How does Legacy Quest work?</h3>
+                    <p class="faq-answer">Legacy Quest is a guided storytelling journey with 60 unique prompts, like "Your First Job" or "Childhood Home." You can follow the daily path or choose your own adventure. Each quest is designed to support brain health and unlock powerful memories.</p>
+                    <hr class="faq-divider">
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What Do I Get With the Free Plan?</h3>
+                    <p class="faq-answer">You can create 3 stories for free, using our basic features. It's a great way to try Lifescribe and see how it works. If you love it, you can upgrade to create more stories and unlock everything.</p>
+                    <hr class="faq-divider">
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Is Lifescribe easy to use for someone who's not tech-savvy?</h3>
+                    <p class="faq-answer">Yes. We designed Lifescribe to be simple, intuitive, and frustration-free. If you can open an app, you can start telling your story. And if you ever need help, we're here.</p>
+                    <hr class="faq-divider">
+                </div>
             </div>
         </div>
-        
-        <!-- CTA Section -->
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="container">
         <div class="cta-section">
             <h2 class="cta-title">Begin Your Legacy Today</h2>
             <p class="cta-subtitle">Your stories matter. Start preserving them today, one chapter at a time.</p>
@@ -1513,41 +1273,424 @@
                 <span class="cta-button-text">Start Free Trial</span>
             </button>
         </div>
-        
-        <!-- Benefits Section -->
-        <div class="benefits-section">
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <img src="Easy to Use.png" alt="Easy to Use" class="benefit-icon-image">
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <!-- Easy To Use Icon -->
+                        <svg class="icon-easy" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="35" stroke="#212121" stroke-width="2"/>
+                            <path d="M20 40L35 30L60 50M35 30L60 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Easy To Use</h3>
+                    <p class="benefit-description">Designed for all ages—no tech skills required.</p>
                 </div>
-                <h3 class="benefit-title">Easy To Use</h3>
-                <p class="benefit-description">Designed for all ages—no tech skills required.</p>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <img src="Private & Secure.png" alt="Private & Secure" class="benefit-icon-image">
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <!-- Private & Secure Icon -->
+                        <svg class="icon-secure" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="25" width="40" height="30" stroke="#212121" stroke-width="2"/>
+                            <path d="M18 25V18C18 12 23 7 30 7C37 7 42 12 42 18V25" stroke="#212121" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="38" r="3" fill="#212121"/>
+                            <path d="M30 41V47" stroke="#212121" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Private & Secure</h3>
+                    <p class="benefit-description">Your memories are yours alone. Nothing is shared without your permission.</p>
                 </div>
-                <h3 class="benefit-title">Private & Secure</h3>
-                <p class="benefit-description">Your memories are yours alone. Nothing is shared without your permission.</p>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">
-                    <img src="Backed by Brain Science.png" alt="Backed by Brain Science" class="benefit-icon-image">
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <!-- Backed by Brain Science Icon -->
+                        <svg class="icon-brain" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M35 10C25 10 20 15 20 25C20 35 25 40 35 40C45 40 50 35 50 25C50 15 45 10 35 10Z" stroke="#212121" stroke-width="2" fill="none"/>
+                            <path d="M35 10C35 10 30 15 30 25C30 35 35 40 35 40M35 10C35 10 40 15 40 25C40 35 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                            <path d="M20 25C20 25 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                            <path d="M50 25C50 25 55 30 55 35C55 40 50 45 45 45C40 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
+                            <path d="M35 40V60M25 50H45" stroke="#212121" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Backed by Brain Science</h3>
+                    <p class="benefit-description">Every story prompt is crafted to support memory and cognitive wellness.</p>
                 </div>
-                <h3 class="benefit-title">Backed by Brain Science</h3>
-                <p class="benefit-description">Every story prompt is crafted to support memory and cognitive wellness.</p>
             </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer-logo">
-                <img src="Logo 2.png" alt="LifeScribe" class="footer-logo-image">
+                <div class="logo-icon">
+                    <!-- Golden feather with teal heartbeat line -->
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Feather -->
+                        <path d="M42 6C42 6 36 9.6 30 18C24 26.4 18 36 18 42C18 48 24 54 30 54C36 54 42 48 42 42C42 36 38.4 24 42 6Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
+                        <path d="M30 18C30 18 26.4 24 26.4 30C26.4 36 30 42 30 42" stroke="#FFFFFF" stroke-width="1.2"/>
+                        <!-- Heartbeat line -->
+                        <path d="M6 30L18 30L21.6 24L26.4 36L31.2 18L36 42L40.8 30L54 30" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
             <p class="footer-email">hello@trylifescribe.com</p>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        // Progressive Enhancement and Performance Optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Service Worker Registration
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered successfully:', registration);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            console.log('New service worker available');
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // Show update notification
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.log('SW registration failed:', error);
+                    });
+            }
+
+            // Intersection Observer for lazy loading and animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Lazy load background images
+                        const bgImage = entry.target.dataset.bgImage;
+                        if (bgImage) {
+                            entry.target.classList.add('loading');
+                            
+                            // Preload image
+                            const img = new Image();
+                            img.onload = () => {
+                                entry.target.style.backgroundImage = `url(${bgImage})`;
+                                entry.target.classList.remove('loading');
+                                entry.target.classList.add('loaded');
+                            };
+                            img.onerror = () => {
+                                entry.target.classList.remove('loading');
+                                console.warn(`Failed to load image: ${bgImage}`);
+                            };
+                            img.src = bgImage;
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Load critical hero image immediately
+            const heroImage = document.querySelector('.hero-right');
+            if (heroImage && heroImage.dataset.bgImage) {
+                const img = new Image();
+                img.onload = () => {
+                    heroImage.classList.add('loaded');
+                };
+                img.onerror = (error) => {
+                    console.warn('Failed to load hero image:', heroImage.dataset.bgImage, error);
+                    heroImage.style.background = 'linear-gradient(135deg, #1D7E6F 0%, #0D5B4F 100%)';
+                };
+                img.src = heroImage.dataset.bgImage;
+            }
+            
+            // Observe all sections for animations and lazy loading
+            const sections = document.querySelectorAll('section, .step-card, .pricing-card, .benefit-item');
+            const elementsWithImages = document.querySelectorAll('[data-bg-image]:not(.hero-right)');
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            elementsWithImages.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Smooth scrolling for anchor links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Enhanced button interactions with touch support
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                // Add touch event support
+                let touchStartTime = 0;
+                
+                button.addEventListener('touchstart', function(e) {
+                    touchStartTime = Date.now();
+                    this.style.transform = 'scale(0.98)';
+                }, { passive: true });
+                
+                button.addEventListener('touchend', function(e) {
+                    const touchDuration = Date.now() - touchStartTime;
+                    this.style.transform = '';
+                    
+                    // Only trigger if it was a quick tap (not a scroll)
+                    if (touchDuration < 200) {
+                        e.preventDefault(); // Prevent double-firing with click
+                    }
+                }, { passive: false });
+                
+                button.addEventListener('click', function(e) {
+                    const buttonText = this.textContent.trim();
+                    
+                    // Add loading state
+                    const originalText = buttonText;
+                    this.style.opacity = '0.8';
+                    this.textContent = 'Loading...';
+                    
+                    // Track button clicks (replace with your analytics)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            event_category: 'button',
+                            event_label: buttonText,
+                            value: 1
+                        });
+                    }
+                    
+                    // Simulate action and restore button
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                        this.textContent = originalText;
+                        
+                        // Handle different button actions
+                        if (buttonText.includes('Free Trial') || buttonText.includes('Sign Up')) {
+                            // Redirect to app or signup flow
+                            window.open('https://app.trylifescribe.com/signup', '_blank');
+                        }
+                    }, 1000);
+                });
+            });
+
+            // Performance monitoring
+            if ('performance' in window) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        const perfData = performance.getEntriesByType('navigation')[0];
+                        const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+                        console.log(`Page load time: ${loadTime}ms`);
+                        
+                        // Report to analytics if needed
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'timing_complete', {
+                                name: 'page_load',
+                                value: Math.round(loadTime)
+                            });
+                        }
+                    }, 0);
+                });
+            }
+
+            // Preload critical images on interaction
+            let imagesPreloaded = false;
+            function preloadImages() {
+                if (imagesPreloaded) return;
+                imagesPreloaded = true;
+                
+                const imagesToPreload = [
+                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png',
+                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png',
+                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png'
+                ];
+                
+                imagesToPreload.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+            }
+
+            // Preload on first user interaction
+            ['mouseenter', 'touchstart', 'focus'].forEach(event => {
+                document.addEventListener(event, preloadImages, { once: true, passive: true });
+            });
+
+            // Install prompt for PWA
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
+                showInstallPromotion();
+            });
+
+            function showInstallPromotion() {
+                // Create install banner (you can customize this)
+                const installBanner = document.createElement('div');
+                installBanner.innerHTML = `
+                    <div style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #1D7E6F; color: white; padding: 1rem; border-radius: 10px; z-index: 10000; display: flex; align-items: center; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                        <span>📱 Install LifeScribe app for better experience</span>
+                        <button id="install-btn" style="background: #FE5E2E; border: none; color: white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Install</button>
+                        <button id="dismiss-btn" style="background: transparent; border: 1px solid white; color: white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Later</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(installBanner);
+                
+                document.getElementById('install-btn').addEventListener('click', async () => {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        const { outcome } = await deferredPrompt.userChoice;
+                        console.log(`User response to install prompt: ${outcome}`);
+                        deferredPrompt = null;
+                    }
+                    installBanner.remove();
+                });
+                
+                document.getElementById('dismiss-btn').addEventListener('click', () => {
+                    installBanner.remove();
+                });
+            }
+
+            function showUpdateNotification() {
+                const updateBanner = document.createElement('div');
+                updateBanner.innerHTML = `
+                    <div style="position: fixed; top: 0; left: 0; right: 0; background: #2ecc71; color: white; padding: 1rem; text-align: center; z-index: 10001;">
+                        <span>🎉 New version available! Refresh to update.</span>
+                        <button onclick="window.location.reload()" style="background: white; color: #2ecc71; border: none; padding: 0.5rem 1rem; margin-left: 1rem; border-radius: 5px; cursor: pointer;">Refresh</button>
+                    </div>
+                `;
+                document.body.appendChild(updateBanner);
+            }
+
+            // Device orientation and resize handling
+            function handleOrientationChange() {
+                try {
+                    // Force a small delay to handle iOS viewport changes
+                    setTimeout(() => {
+                        // Update CSS custom property for real viewport height
+                        const vh = window.innerHeight * 0.01;
+                        document.documentElement.style.setProperty('--vh', `${vh}px`);
+                        
+                        // Trigger a repaint to fix any layout issues
+                        document.body.style.height = '100.1%';
+                        setTimeout(() => {
+                            document.body.style.height = '';
+                        }, 10);
+                    }, 100);
+                } catch (error) {
+                    console.warn('Error handling orientation change:', error);
+                }
+            }
+            
+            // Listen for orientation changes and resize events
+            window.addEventListener('orientationchange', handleOrientationChange);
+            window.addEventListener('resize', handleOrientationChange);
+            
+            // Initial call
+            handleOrientationChange();
+            
+            // iOS-specific viewport height fix
+            function setViewportHeight() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setViewportHeight();
+            window.addEventListener('resize', setViewportHeight);
+            
+            // Network status monitoring
+            function updateOnlineStatus() {
+                const statusIndicator = document.createElement('div');
+                statusIndicator.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    z-index: 10000;
+                    transition: all 0.3s ease;
+                `;
+                
+                if (navigator.onLine) {
+                    statusIndicator.textContent = '🟢 Online';
+                    statusIndicator.style.background = '#2ecc71';
+                    statusIndicator.style.color = 'white';
+                } else {
+                    statusIndicator.textContent = '🔴 Offline';
+                    statusIndicator.style.background = '#e74c3c';
+                    statusIndicator.style.color = 'white';
+                }
+                
+                // Remove existing indicator
+                const existing = document.querySelector('.network-status');
+                if (existing) existing.remove();
+                
+                statusIndicator.className = 'network-status';
+                document.body.appendChild(statusIndicator);
+                
+                // Auto-hide after 3 seconds if online
+                if (navigator.onLine) {
+                    setTimeout(() => {
+                        if (statusIndicator.parentNode) {
+                            statusIndicator.remove();
+                        }
+                    }, 3000);
+                }
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+
+            // Initialize
+            console.log('🚀 LifeScribe website loaded successfully');
+            console.log('📱 Responsive design active');
+            console.log('⚡ Performance optimizations enabled');
+            console.log('🔄 Service worker registered');
+        });
+
+        // CSS Animation classes (add to your CSS)
+        const style = document.createElement('style');
+        style.textContent = `
+            section, .step-card, .pricing-card, .benefit-item {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            section.visible, .step-card.visible, .pricing-card.visible, .benefit-item.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .hero-section {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
