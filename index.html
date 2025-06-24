@@ -25,19 +25,18 @@
         /* Main Container */
         .desktop-1 {
             position: relative;
-            width: 1440px;
-            height: 6628px;
+            width: 100%;
+            max-width: 1440px;
+            min-height: 100vh;
             background: #FFFFFF;
             margin: 0 auto;
         }
         
         /* Top Banner */
         .top-banner {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
             height: 44px;
-            left: 0px;
-            top: 0px;
             background: #1D7E6F;
             display: flex;
             align-items: center;
@@ -55,17 +54,16 @@
         
         /* Navigation */
         .navigation {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
             height: 120px;
-            left: 0px;
-            top: 44px;
             background: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 30px 100px;
             z-index: 10;
+            box-sizing: border-box;
         }
         
         .logo-container {
@@ -107,11 +105,11 @@
         
         /* Hero Section */
         .hero-section {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
             height: 580px;
-            left: 0px;
-            top: 164px;
+            margin: 0 auto;
             display: flex;
         }
         
@@ -206,15 +204,16 @@
         
         /* Quote Section */
         .quote-section {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
             height: 531px;
-            left: 0px;
-            top: 722px;
+            margin: 0 auto;
             background: #FE5E2E;
             display: flex;
             align-items: center;
             padding: 0 219px;
+            box-sizing: border-box;
         }
         
         .oprah-image {
@@ -265,10 +264,11 @@
         
         /* How it Works Section */
         .how-it-works {
-            position: absolute;
-            width: 1440px;
-            left: 0px;
-            top: 1312px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 60px 0;
         }
         
         .section-title {
@@ -333,15 +333,16 @@
         
         /* Sign of the Times Section */
         .sign-of-times {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
             height: 550px;
-            left: 0px;
-            top: 1886px;
+            margin: 0 auto;
             background: #F4F0E7;
             padding: 90px 0;
             display: flex;
             align-items: center;
+            box-sizing: border-box;
         }
         
         .sign-content {
@@ -391,11 +392,14 @@
         
         /* Features Sections */
         .feature-section {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 60px 126px;
             display: flex;
             align-items: center;
-            padding: 0 126px;
+            box-sizing: border-box;
         }
         
         .feature-left {
@@ -445,13 +449,14 @@
         
         /* Pricing Section */
         .pricing-section {
-            position: absolute;
-            width: 1440px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
             height: 844px;
-            left: 0px;
-            top: 3698px;
+            margin: 0 auto;
             background: #1D7E6F;
             padding: 54px 57px;
+            box-sizing: border-box;
         }
         
         .pricing-title {
@@ -559,11 +564,12 @@
         
         /* FAQ Section */
         .faq-section {
-            position: absolute;
-            width: 1440px;
-            left: 0px;
-            top: 4609px;
-            padding: 0 270px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 60px 270px;
+            box-sizing: border-box;
         }
         
         .faq-title {
@@ -615,11 +621,11 @@
         
         /* CTA Section */
         .cta-section {
-            position: absolute;
-            width: 1158px;
+            position: relative;
+            width: calc(100% - 284px);
+            max-width: 1158px;
             height: 345px;
-            left: 142px;
-            top: 5609px;
+            margin: 60px auto;
             background: #FE5E2E;
             border-radius: 50px;
             display: flex;
@@ -683,12 +689,14 @@
         
         /* Benefits Section */
         .benefits-section {
-            position: absolute;
-            width: 1440px;
-            top: 6017px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 60px auto;
             display: flex;
             justify-content: space-around;
             padding: 0 199px;
+            box-sizing: border-box;
         }
         
         .benefit-item {
@@ -738,10 +746,10 @@
         
         /* Footer */
         .footer {
-            position: absolute;
-            width: 1440px;
-            left: 0px;
-            top: 6362px;
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 60px auto 0;
             border-top: 1px solid #000000;
             padding: 48px 0;
             display: flex;
@@ -852,6 +860,92 @@
                 line-height: 28px;
                 max-width: 100%;
             }
+
+            .quote-section {
+                height: auto;
+                padding: 40px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .quote-content {
+                margin-left: 0;
+                margin-top: 30px;
+            }
+
+            .how-it-works {
+                padding: 40px 20px;
+            }
+
+            .steps-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .step-card {
+                width: calc(50% - 10px);
+                min-width: 250px;
+            }
+
+            .sign-of-times {
+                height: auto;
+                flex-direction: column;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .sign-content {
+                width: 100%;
+                padding-left: 0;
+                margin-bottom: 30px;
+            }
+
+            .sign-images {
+                width: 100%;
+                padding: 0;
+                justify-content: center;
+            }
+
+            .feature-section {
+                padding: 40px 60px;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .feature-image {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .pricing-section {
+                height: auto;
+                padding: 40px 30px;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .faq-section {
+                padding: 40px 60px;
+            }
+
+            .cta-section {
+                width: calc(100% - 40px);
+                margin: 40px 20px;
+                padding: 40px 20px;
+            }
+
+            .benefits-section {
+                padding: 40px 60px;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+            }
         }
 
         /* Mobile Styles (up to 768px) */
@@ -943,18 +1037,155 @@
                 object-fit: cover;
             }
 
-            /* Make sections stack properly on mobile */
-            .stats-section,
-            .how-it-works-section,
-            .pricing-section,
-            .testimonials-section,
-            .faq-section,
-            .cta-section,
-            .benefits-section {
+            .quote-section {
+                height: auto;
+                padding: 30px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .oprah-image {
+                width: 200px;
+                height: 250px;
+                margin: 0 auto 20px;
+            }
+
+            .quote-content {
+                margin-left: 0;
+            }
+
+            .quote-text {
+                font-size: 32px;
+                line-height: 42px;
+            }
+
+            .how-it-works {
+                padding: 30px 20px;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .step-card {
                 width: 100%;
-                padding: 40px 20px;
-                position: relative;
-                margin-top: 20px;
+                max-width: 300px;
+            }
+
+            .sign-of-times {
+                height: auto;
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .sign-content {
+                width: 100%;
+                padding-left: 0;
+                margin-bottom: 20px;
+            }
+
+            .sign-title {
+                font-size: 36px;
+                line-height: 44px;
+                white-space: normal;
+            }
+
+            .sign-description {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .sign-images {
+                width: 100%;
+                padding: 0;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .sign-image {
+                height: 250px;
+            }
+
+            .feature-section {
+                padding: 30px 20px;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .feature-image {
+                width: 100%;
+                max-width: 350px;
+                height: 250px;
+            }
+
+            .feature-title {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .pricing-section {
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .faq-section {
+                padding: 30px 20px;
+            }
+
+            .faq-title {
+                font-size: 32px;
+                line-height: 42px;
+            }
+
+            .faq-question {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .cta-section {
+                width: calc(100% - 40px);
+                margin: 30px 20px;
+                padding: 30px 20px;
+                border-radius: 25px;
+            }
+
+            .cta-title {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .benefits-section {
+                padding: 30px 20px;
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .benefit-item {
+                width: 100%;
+                max-width: 250px;
             }
 
             /* Adjust grid layouts for mobile */
@@ -996,7 +1227,12 @@
             }
 
             .footer-logo-image {
-                height: 40px;
+                height: 100px;
+            }
+
+            .footer-email {
+                font-size: 18px;
+                line-height: 24px;
             }
         }
 
@@ -1174,7 +1410,7 @@
         </div>
         
         <!-- Feature Section 1 -->
-        <div class="feature-section" style="top: 2645px;">
+        <div class="feature-section">
             <div class="feature-left">
                 <div class="feature-image" style="background-image: url('Your Story 1.jpg');"></div>
             </div>
@@ -1186,7 +1422,7 @@
         </div>
         
         <!-- Feature Section 2 -->
-        <div class="feature-section" style="top: 3121px;">
+        <div class="feature-section">
             <div class="feature-left">
                 <h2 class="feature-title">Not Sure What to Write? We'll Guide You.</h2>
                 <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
