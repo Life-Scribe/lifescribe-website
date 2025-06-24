@@ -567,11 +567,13 @@
         }
         
         /* Specific background images for Sign of the Times */
-        .sign-image[data-bg-image="NL_1001_700x700 1.png"] {
+        .sign-image[data-bg-image="NL_1001_700x700 1.png"],
+        .sign-image.nl-image {
             background-image: url('NL_1001_700x700 1.png');
         }
         
-        .sign-image[data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"] {
+        .sign-image[data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"],
+        .sign-image.elvis-image {
             background-image: url('Elvis_Presley_Jailhouse_Rock.jpg');
         }
         
@@ -792,12 +794,11 @@
         }
         
         .cta-subtitle {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
             color: #FFFFFF;
             font-size: clamp(1rem, 2.5vw, 1.5rem);
-            line-height: 1.3;
-            letter-spacing: -0.04em;
+            line-height: 1.4;
             margin-bottom: clamp(2rem, 4vw, 3rem);
         }
         
@@ -1313,8 +1314,8 @@
                     <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
                 </div>
                 <div class="sign-images">
-                    <div class="sign-image" data-bg-image="NL_1001_700x700 1.png"></div>
-                    <div class="sign-image" data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"></div>
+                    <div class="sign-image nl-image" data-bg-image="NL_1001_700x700 1.png"></div>
+                    <div class="sign-image elvis-image" data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"></div>
                 </div>
             </div>
         </div>
