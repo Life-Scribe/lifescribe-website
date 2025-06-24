@@ -56,7 +56,7 @@
         .navigation{width:100%;background:#fff;padding:clamp(1rem,3vw,1.5rem) 0;position:relative;z-index:1000}
         .nav-container{display:flex;align-items:center;justify-content:space-between}
         .logo-container{display:flex;align-items:center;gap:clamp(0.5rem,2vw,1rem)}
-        .logo-icon{width:clamp(35px,6vw,50px);height:clamp(35px,6vw,50px);flex-shrink:0;object-fit:contain}
+        .logo-icon{width:clamp(70px,12vw,100px);height:clamp(70px,12vw,100px);flex-shrink:0;object-fit:contain}
         .logo-text-life{font-family:'Playfair Display',serif;font-weight:400;color:#FDB913;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1}
         .logo-text-scribe{font-family:'Inter',sans-serif;font-weight:400;color:#1D7E6F;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1;text-transform:uppercase;letter-spacing:0.05em}
         .nav-cta{background:#FE5E2E;border-radius:50px;padding:clamp(0.5rem,2vw,0.75rem) clamp(1rem,3vw,1.5rem);border:none;cursor:pointer}
@@ -236,8 +236,8 @@
         }
         
         .logo-icon {
-            width: clamp(35px, 6vw, 50px);
-            height: clamp(35px, 6vw, 50px);
+            width: clamp(70px, 12vw, 100px);
+            height: clamp(70px, 12vw, 100px);
             flex-shrink: 0;
             object-fit: contain;
             display: block;
@@ -561,19 +561,29 @@
         .sign-image {
             width: 100%;
             height: clamp(200px, 30vw, 300px);
+            min-height: 200px;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             border-radius: 8px;
+            background-color: #f0f0f0;
         }
         
         /* Specific background images for Sign of the Times */
-        .sign-image[data-bg-image="NL_1001_700x700 1.png"],
-        .sign-image.nl-image {
+        .nl-image {
+            background-image: url('NL_1001_700x700 1.png') !important;
+        }
+        
+        .elvis-image {
+            background-image: url('Elvis_Presley_Jailhouse_Rock.jpg') !important;
+        }
+        
+        /* Additional fallback selectors */
+        .sign-images .sign-image:first-child {
             background-image: url('NL_1001_700x700 1.png');
         }
         
-        .sign-image[data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"],
-        .sign-image.elvis-image {
+        .sign-images .sign-image:last-child {
             background-image: url('Elvis_Presley_Jailhouse_Rock.jpg');
         }
         
@@ -899,8 +909,8 @@
         }
         
         .footer-logo img {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
         }
         
