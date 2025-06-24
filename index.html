@@ -599,6 +599,25 @@
             background-size: cover;
             background-position: center;
             border-radius: 25px;
+            background-color: #f0f0f0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-image.loading {
+            opacity: 0.7;
+        }
+        
+        .feature-image.loaded {
+            opacity: 1;
+        }
+        
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 25px;
         }
         
         /* Pricing Section */
@@ -1317,7 +1336,9 @@
     <section class="feature-section" id="features">
         <div class="container">
             <div class="feature-container">
-                <div class="feature-image" data-bg-image="Your Story 1.jpg"></div>
+                <div class="feature-image">
+                    <img src="Your Story 1.jpg" alt="Your Story organized beautifully" class="feature-img">
+                </div>
                 <div class="feature-content">
                     <h2 class="feature-title">Your Story, Organized Beautifully</h2>
                     <p class="feature-subtitle">Just speak or type — we'll do the writing.</p>
@@ -1336,7 +1357,9 @@
                     <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
                     <p class="feature-description">Legacy Quest is our interactive storytelling journey. Each day, you'll get a new memory prompt designed to spark rich, personal stories—like "Your First Wheels" or "The Teacher Who Understood You." You can follow our guided path or jump around based on what speaks to you.</p>
                 </div>
-                <div class="feature-image" data-bg-image="Your Story 2.jpg"></div>
+                <div class="feature-image">
+                    <img src="Your Story 2.jpg" alt="Daily memory prompts and guidance" class="feature-img">
+                </div>
             </div>
         </div>
     </section>
