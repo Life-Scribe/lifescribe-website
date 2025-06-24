@@ -553,7 +553,7 @@
         
         .sign-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: clamp(1rem, 3vw, 2rem);
             overflow: hidden;
         }
@@ -564,6 +564,15 @@
             background-size: cover;
             background-position: center;
             border-radius: 8px;
+        }
+        
+        /* Specific background images for Sign of the Times */
+        .sign-image[data-bg-image="NL_1001_700x700 1.png"] {
+            background-image: url('NL_1001_700x700 1.png');
+        }
+        
+        .sign-image[data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"] {
+            background-image: url('Elvis_Presley_Jailhouse_Rock.jpg');
         }
         
         /* Feature Sections */
@@ -1293,9 +1302,8 @@
                     <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
                 </div>
                 <div class="sign-images">
-                    <div class="sign-image" data-bg-image="Your Story 1.jpg"></div>
-                    <div class="sign-image" data-bg-image="Your Story 2.jpg"></div>
-                    <div class="sign-image" data-bg-image="Hero.jpg"></div>
+                    <div class="sign-image" data-bg-image="NL_1001_700x700 1.png"></div>
+                    <div class="sign-image" data-bg-image="Elvis_Presley_Jailhouse_Rock.jpg"></div>
                 </div>
             </div>
         </div>
