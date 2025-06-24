@@ -56,7 +56,7 @@
         .navigation{width:100%;background:#fff;padding:clamp(1rem,3vw,1.5rem) 0;position:relative;z-index:1000}
         .nav-container{display:flex;align-items:center;justify-content:space-between}
         .logo-container{display:flex;align-items:center;gap:clamp(0.5rem,2vw,1rem)}
-        .logo-icon{width:clamp(35px,6vw,50px);height:clamp(35px,6vw,50px);flex-shrink:0}
+        .logo-icon{width:clamp(35px,6vw,50px);height:clamp(35px,6vw,50px);flex-shrink:0;object-fit:contain}
         .logo-text-life{font-family:'Playfair Display',serif;font-weight:400;color:#FDB913;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1}
         .logo-text-scribe{font-family:'Inter',sans-serif;font-weight:400;color:#1D7E6F;font-size:clamp(1.25rem,4vw,2.25rem);line-height:1;text-transform:uppercase;letter-spacing:0.05em}
         .nav-cta{background:#FE5E2E;border-radius:50px;padding:clamp(0.5rem,2vw,0.75rem) clamp(1rem,3vw,1.5rem);border:none;cursor:pointer}
@@ -239,6 +239,8 @@
             width: clamp(35px, 6vw, 50px);
             height: clamp(35px, 6vw, 50px);
             flex-shrink: 0;
+            object-fit: contain;
+            display: block;
         }
         
         .logo-text-container {
@@ -823,25 +825,187 @@
             letter-spacing: -0.04em;
         }
         
-        /* Footer */
+        /* Modern Footer */
         .footer {
             width: 100%;
-            border-top: 1px solid #000000;
-            padding: clamp(2rem, 4vw, 3rem) 0;
-            text-align: center;
+            background: #F8F9FA;
+            border-top: 1px solid #E9ECEF;
+            padding: clamp(3rem, 6vw, 4rem) 0 clamp(1.5rem, 3vw, 2rem) 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+        
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         
         .footer-logo {
             margin-bottom: 1rem;
         }
         
-        .footer-email {
-            font-family: 'Playfair Display', serif;
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .footer-description {
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            color: #000000;
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: #6C757D;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+        
+        .footer-contact {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #1D7E6F;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-contact:hover {
+            color: #FE5E2E;
+        }
+        
+        .footer-section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: #212529;
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            margin-bottom: 1rem;
             line-height: 1.3;
-            letter-spacing: -0.04em;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #6C757D;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.25rem 0;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .footer-link:hover {
+            color: #1D7E6F;
+            padding-left: 0.5rem;
+        }
+        
+        .footer-link:hover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 100%;
+            background: #FE5E2E;
+            border-radius: 2px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #E9ECEF;
+            padding-top: clamp(1.5rem, 3vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-copyright {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #6C757D;
+            font-size: clamp(0.8rem, 1.8vw, 0.875rem);
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #FFFFFF;
+            border: 1px solid #E9ECEF;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #6C757D;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+        }
+        
+        .social-link:hover {
+            background: #1D7E6F;
+            color: #FFFFFF;
+            border-color: #1D7E6F;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-logo-section {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-description {
+                text-align: center;
+                max-width: none;
+            }
+            
+            .footer-section {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
         }
         
         /* Icon Responsive Styles */
@@ -1096,7 +1260,7 @@
     </section>
     
     <!-- How it Works Section -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <h2 class="section-title">How it Works</h2>
             <div class="steps-container">
@@ -1147,7 +1311,7 @@
     </section>
     
     <!-- Feature Section 1 -->
-    <section class="feature-section">
+    <section class="feature-section" id="features">
         <div class="container">
             <div class="feature-container">
                 <div class="feature-image" data-bg-image="Your Story 1.jpg"></div>
@@ -1175,7 +1339,7 @@
     </section>
     
     <!-- Pricing Section -->
-    <section class="pricing-section">
+    <section class="pricing-section" id="pricing">
         <div class="container">
             <h2 class="pricing-title">Simple, Transparent Pricing</h2>
             <div class="pricing-cards">
@@ -1214,7 +1378,7 @@
     </section>
     
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
             <div class="faq-content">
                 <h2 class="faq-title">Frequently Asked Questions</h2>
@@ -1294,13 +1458,81 @@
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- Modern Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo">
-                <img src="Logo 2.png" alt="LifeScribe logo" style="width: 60px; height: 60px;" />
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section footer-logo-section">
+                    <div class="footer-logo">
+                        <img src="Logo 2.png" alt="LifeScribe logo" />
+                    </div>
+                    <p class="footer-description">
+                        Helping you capture, preserve, and share your life's most precious moments. Transform memories into beautifully written chapters with AI assistance.
+                    </p>
+                    <a href="mailto:hello@trylifescribe.com" class="footer-contact" aria-label="Contact LifeScribe via email">
+                        hello@trylifescribe.com
+                    </a>
+                </div>
+                
+                <!-- Product Links -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Product</h3>
+                    <nav class="footer-links" aria-label="Product navigation">
+                        <a href="#how-it-works" class="footer-link">How It Works</a>
+                        <a href="#pricing" class="footer-link">Pricing</a>
+                        <a href="#features" class="footer-link">Features</a>
+                        <a href="https://app.trylifescribe.com/signup" class="footer-link" target="_blank" rel="noopener noreferrer">Start Free Trial</a>
+                    </nav>
+                </div>
+                
+                <!-- Support Links -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Support</h3>
+                    <nav class="footer-links" aria-label="Support navigation">
+                        <a href="#faq" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Help Center</a>
+                        <a href="mailto:support@trylifescribe.com" class="footer-link">Contact Support</a>
+                        <a href="#" class="footer-link">Community</a>
+                    </nav>
+                </div>
+                
+                <!-- Legal Links -->
+                <div class="footer-section">
+                    <h3 class="footer-section-title">Legal</h3>
+                    <nav class="footer-links" aria-label="Legal navigation">
+                        <a href="LS Privacy Policy June 2025.pdf" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy - Opens in new tab">Privacy Policy</a>
+                        <a href="LS Terms of Service June 2025.pdf" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Terms of Service - Opens in new tab">Terms of Service</a>
+                        <a href="LS Cookie Policy June 2025.pdf" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Cookie Policy - Opens in new tab">Cookie Policy</a>
+                        <a href="LS Data Storage Policy June 2025.pdf" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Data Storage Policy - Opens in new tab">Data Storage Policy</a>
+                        <a href="LS Arbitration Agreement June 2025.pdf" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Arbitration Agreement - Opens in new tab">Arbitration Agreement</a>
+                    </nav>
+                </div>
             </div>
-            <p class="footer-email">hello@trylifescribe.com</p>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-social" aria-label="Social media links">
+                    <a href="#" class="social-link" aria-label="Follow us on Twitter" title="Twitter">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Follow us on LinkedIn" title="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Follow us on Facebook" title="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-copyright">
+                    © 2025 LifeScribe. All rights reserved. | Transforming memories into legacy, one story at a time.
+                </p>
+            </div>
         </div>
     </footer>
 
