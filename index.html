@@ -387,7 +387,7 @@
         .oprah-image {
             width: clamp(200px, 40vw, 300px);
             height: clamp(240px, 48vw, 360px);
-            background-image: url('Your Story 1.jpg');
+            background-image: url('Oprah.png');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -464,6 +464,27 @@
             margin-bottom: 1rem;
             background-color: #f0f0f0; /* Fallback */
             transition: opacity 0.3s ease;
+        }
+        
+        /* Specific background images for How it Works steps */
+        .step-image[data-bg-image="How it Works 1.jpg"] {
+            background-image: url('How it Works 1.jpg');
+        }
+        
+        .step-image[data-bg-image="How it Works 2.jpg"] {
+            background-image: url('How it Works 2.jpg');
+        }
+        
+        .step-image[data-bg-image="How it Works 3.jpg"] {
+            background-image: url('How it Works 3.jpg');
+        }
+        
+        .step-image[data-bg-image="How it Works 4.jpg"] {
+            background-image: url('How it Works 4.jpg');
+        }
+        
+        .step-image[data-bg-image="How it Works 5.jpg"] {
+            background-image: url('How it Works 5.jpg');
         }
         
         .step-image.loading {
@@ -1219,7 +1240,7 @@
     <section class="quote-section">
         <div class="container">
             <div class="quote-container">
-                <div class="oprah-image" data-bg-image="Your Story 1.jpg"></div>
+                <div class="oprah-image" data-bg-image="Oprah.png"></div>
                 <div class="quote-content">
                     <div class="quote-header">The Power of Story</div>
                     <div class="quote-text">"The most powerful stories are the ones we tell ourselves — and choose to share."</div>
@@ -1673,6 +1694,7 @@
                     'How it Works 3.jpg',
                     'How it Works 4.jpg',
                     'How it Works 5.jpg',
+                    'Oprah.png',
                     'Your Story 1.jpg',
                     'Your Story 2.jpg',
                     'Logo 2.png',
