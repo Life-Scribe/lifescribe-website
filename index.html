@@ -6,7 +6,7 @@
     <title>LifeScribe - Every Life Deserves a Legacy</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -145,7 +145,7 @@
         }
         
         .hero-subtitle {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-style: normal;
             font-weight: 300;
             font-size: 22px;
@@ -185,7 +185,7 @@
         }
         
         .hero-tagline {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-style: italic;
             font-weight: 400;
             font-size: 17px;
@@ -784,6 +784,307 @@
         .icon-brain {
             width: 70px;
             height: 70px;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN - MEDIA QUERIES
+           ======================================== */
+
+        /* Tablet Styles (768px - 1024px) */
+        @media screen and (max-width: 1024px) {
+            .desktop-1 {
+                width: 100%;
+                max-width: 1024px;
+                height: auto;
+            }
+
+            .top-banner {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .navigation {
+                width: 100%;
+                padding: 20px 40px;
+                height: 100px;
+            }
+
+            .logo-image {
+                height: 80px;
+            }
+
+            .nav-cta {
+                width: 180px;
+                height: 45px;
+            }
+
+            .hero-section {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                position: relative;
+                top: 144px;
+            }
+
+            .hero-left {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .hero-right {
+                width: 100%;
+                height: 400px;
+                position: relative;
+                left: 0;
+            }
+
+            .hero-title {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+                line-height: 28px;
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile Styles (up to 768px) */
+        @media screen and (max-width: 768px) {
+            .desktop-1 {
+                width: 100%;
+                height: auto;
+            }
+
+            .top-banner {
+                width: 100%;
+                height: auto;
+                padding: 10px 15px;
+            }
+
+            .top-banner-text {
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+            }
+
+            .navigation {
+                width: 100%;
+                height: 80px;
+                padding: 15px 20px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .logo-image {
+                height: 60px;
+            }
+
+            .nav-cta {
+                width: 150px;
+                height: 40px;
+            }
+
+            .nav-cta-text {
+                font-size: 12px;
+            }
+
+            .hero-section {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                position: relative;
+                top: 100px;
+            }
+
+            .hero-left {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+                line-height: 26px;
+                margin-bottom: 25px;
+                max-width: 100%;
+            }
+
+            .hero-cta {
+                width: 100%;
+                max-width: 250px;
+                height: 55px;
+                margin: 0 auto 15px;
+            }
+
+            .hero-right {
+                width: 100%;
+                height: 300px;
+                position: relative;
+                left: 0;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* Make sections stack properly on mobile */
+            .stats-section,
+            .how-it-works-section,
+            .pricing-section,
+            .testimonials-section,
+            .faq-section,
+            .cta-section,
+            .benefits-section {
+                width: 100%;
+                padding: 40px 20px;
+                position: relative;
+                margin-top: 20px;
+            }
+
+            /* Adjust grid layouts for mobile */
+            .stats-grid,
+            .how-it-works-grid,
+            .pricing-grid,
+            .benefits-section {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            /* Typography adjustments for mobile */
+            .section-title {
+                font-size: 28px;
+                line-height: 34px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            /* Footer adjustments */
+            .footer {
+                width: 100%;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .footer-logo-image {
+                height: 40px;
+            }
+        }
+
+        /* Large Mobile Styles (480px - 768px) */
+        @media screen and (min-width: 481px) and (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+                line-height: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 19px;
+                line-height: 27px;
+            }
+
+            .navigation {
+                height: 90px;
+                padding: 20px 25px;
+            }
+
+            .logo-image {
+                height: 70px;
+            }
+        }
+
+        /* Small Mobile Styles (up to 480px) */
+        @media screen and (max-width: 480px) {
+            .top-banner-text {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .navigation {
+                height: 70px;
+                padding: 10px 15px;
+            }
+
+            .logo-image {
+                height: 50px;
+            }
+
+            .nav-cta {
+                width: 120px;
+                height: 35px;
+            }
+
+            .nav-cta-text {
+                font-size: 11px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .hero-left {
+                padding: 25px 15px;
+            }
+
+            .section-title {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            .pricing-card {
+                max-width: 300px;
+                padding: 25px 20px;
+            }
+        }
+
+        /* Ensure images are responsive */
+        @media screen and (max-width: 1024px) {
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .hero-image,
+            .benefit-icon-image,
+            .testimonial-image {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
         }
     </style>
 </head>
