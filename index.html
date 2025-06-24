@@ -365,7 +365,7 @@
         }
         
         .hero-right.loaded {
-            background-image: url('https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png');
+            background-image: url('Hero.jpg');
         }
         
         /* Quote Section */
@@ -385,7 +385,8 @@
         .oprah-image {
             width: clamp(200px, 40vw, 300px);
             height: clamp(240px, 48vw, 360px);
-            background: url('https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png') center/cover;
+            background-size: cover;
+            background-position: center;
             border-radius: 10px;
             flex-shrink: 0;
         }
@@ -1056,20 +1057,7 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo-container">
-                    <div class="logo-icon">
-                        <!-- New logo design with feather and heartbeat -->
-                        <svg width="100%" height="100%" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="LifeScribe logo - feather with heartbeat line">
-                            <!-- Feather -->
-                            <path d="M35 5C35 5 29 8.6 25 15C21 21.4 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 35C35 30 32.4 20 35 5Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
-                            <path d="M25 15C25 15 22.4 20 22.4 25C22.4 30 25 35 25 35" stroke="#FFFFFF" stroke-width="1.2"/>
-                            <!-- Heartbeat line -->
-                            <path d="M5 25L15 25L18.6 20L22.4 30L26.2 15L30 35L34.8 25L45 25" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text-container">
-                        <span class="logo-text-life">Life</span>
-                        <span class="logo-text-scribe">SCRIBE</span>
-                    </div>
+                    <img src="Logo 2.png" alt="LifeScribe logo" class="logo-icon" />
                 </div>
                 <button class="nav-cta" aria-label="Start your free trial of LifeScribe">
                     <span class="nav-cta-text">Start Free Trial</span>
@@ -1089,7 +1077,7 @@
                 </button>
                 <p class="hero-tagline">Start building your legacy today.</p>
             </div>
-            <div class="hero-right" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
+            <div class="hero-right" data-bg-image="Hero.jpg"></div>
         </div>
     </section>
     
@@ -1097,7 +1085,7 @@
     <section class="quote-section">
         <div class="container">
             <div class="quote-container">
-                <div class="oprah-image"></div>
+                <div class="oprah-image" data-bg-image="Your Story 1.jpg"></div>
                 <div class="quote-content">
                     <div class="quote-header">The Power of Story</div>
                     <div class="quote-text">"The most powerful stories are the ones we tell ourselves — and choose to share."</div>
@@ -1113,27 +1101,27 @@
             <h2 class="section-title">How it Works</h2>
             <div class="steps-container">
                 <div class="step-card">
-                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
+                    <div class="step-image" data-bg-image="How it Works 1.jpg"></div>
                     <h3 class="step-title">Speak, Type, or Upload Photos</h3>
                     <p class="step-description">Let your story flow naturally—talk to the app, write it down, or upload photo albums to get started.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
+                    <div class="step-image" data-bg-image="How it Works 2.jpg"></div>
                     <h3 class="step-title">Choose a Style or Director</h3>
                     <p class="step-description">Select a literary tone or visual flair—from Hemingway to Hitchcock—to match the feel of your memory.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png"></div>
+                    <div class="step-image" data-bg-image="How it Works 3.jpg"></div>
                     <h3 class="step-title">Let AI Transform Your Story</h3>
                     <p class="step-description">Lifescribe transforms your memory into a beautifully written chapter and a personalized illustration.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo_bg.png"></div>
+                    <div class="step-image" data-bg-image="How it Works 4.jpg"></div>
                     <h3 class="step-title">Add To Your Life Book</h3>
                     <p class="step-description">Save your story in a personal book that organizes your memories by theme, time, or milestones.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/google_logo.png"></div>
+                    <div class="step-image" data-bg-image="How it Works 5.jpg"></div>
                     <h3 class="step-title">Save It With Future Generations</h3>
                     <p class="step-description">Keep it private, print it, or share it with loved ones—it's your story, told your way.</p>
                 </div>
@@ -1150,9 +1138,9 @@
                     <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
                 </div>
                 <div class="sign-images">
-                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
-                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
-                    <div class="sign-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png"></div>
+                    <div class="sign-image" data-bg-image="Your Story 1.jpg"></div>
+                    <div class="sign-image" data-bg-image="Your Story 2.jpg"></div>
+                    <div class="sign-image" data-bg-image="Hero.jpg"></div>
                 </div>
             </div>
         </div>
@@ -1162,7 +1150,7 @@
     <section class="feature-section">
         <div class="container">
             <div class="feature-container">
-                <div class="feature-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png"></div>
+                <div class="feature-image" data-bg-image="Your Story 1.jpg"></div>
                 <div class="feature-content">
                     <h2 class="feature-title">Your Story, Organized Beautifully</h2>
                     <p class="feature-subtitle">Just speak or type — we'll do the writing.</p>
@@ -1181,7 +1169,7 @@
                     <p class="feature-subtitle">Daily questions designed to unlock your most powerful memories.</p>
                     <p class="feature-description">Legacy Quest is our interactive storytelling journey. Each day, you'll get a new memory prompt designed to spark rich, personal stories—like "Your First Wheels" or "The Teacher Who Understood You." You can follow our guided path or jump around based on what speaks to you.</p>
                 </div>
-                <div class="feature-image" data-bg-image="https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png"></div>
+                <div class="feature-image" data-bg-image="Your Story 2.jpg"></div>
             </div>
         </div>
     </section>
@@ -1281,11 +1269,7 @@
             <div class="benefits-container">
                 <div class="benefit-item">
                     <div class="benefit-icon">
-                        <!-- Easy To Use Icon -->
-                        <svg class="icon-easy" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="40" r="35" stroke="#212121" stroke-width="2"/>
-                            <path d="M20 40L35 30L60 50M35 30L60 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <img src="Icon 1.png" alt="Easy To Use" class="icon-easy" />
                     </div>
                     <h3 class="benefit-title">Easy To Use</h3>
                     <p class="benefit-description">Designed for all ages—no tech skills required.</p>
@@ -1293,13 +1277,7 @@
                 
                 <div class="benefit-item">
                     <div class="benefit-icon">
-                        <!-- Private & Secure Icon -->
-                        <svg class="icon-secure" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="10" y="25" width="40" height="30" stroke="#212121" stroke-width="2"/>
-                            <path d="M18 25V18C18 12 23 7 30 7C37 7 42 12 42 18V25" stroke="#212121" stroke-width="2" fill="none"/>
-                            <circle cx="30" cy="38" r="3" fill="#212121"/>
-                            <path d="M30 41V47" stroke="#212121" stroke-width="2"/>
-                        </svg>
+                        <img src="Icon 2.png" alt="Private & Secure" class="icon-secure" />
                     </div>
                     <h3 class="benefit-title">Private & Secure</h3>
                     <p class="benefit-description">Your memories are yours alone. Nothing is shared without your permission.</p>
@@ -1307,14 +1285,7 @@
                 
                 <div class="benefit-item">
                     <div class="benefit-icon">
-                        <!-- Backed by Brain Science Icon -->
-                        <svg class="icon-brain" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M35 10C25 10 20 15 20 25C20 35 25 40 35 40C45 40 50 35 50 25C50 15 45 10 35 10Z" stroke="#212121" stroke-width="2" fill="none"/>
-                            <path d="M35 10C35 10 30 15 30 25C30 35 35 40 35 40M35 10C35 10 40 15 40 25C40 35 35 40 35 40" stroke="#212121" stroke-width="2"/>
-                            <path d="M20 25C20 25 15 30 15 35C15 40 20 45 25 45C30 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
-                            <path d="M50 25C50 25 55 30 55 35C55 40 50 45 45 45C40 45 35 40 35 40" stroke="#212121" stroke-width="2"/>
-                            <path d="M35 40V60M25 50H45" stroke="#212121" stroke-width="2"/>
-                        </svg>
+                        <img src="Icon 3.png" alt="Backed by Brain Science" class="icon-brain" />
                     </div>
                     <h3 class="benefit-title">Backed by Brain Science</h3>
                     <p class="benefit-description">Every story prompt is crafted to support memory and cognitive wellness.</p>
@@ -1327,16 +1298,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo">
-                <div class="logo-icon">
-                    <!-- Golden feather with teal heartbeat line -->
-                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Feather -->
-                        <path d="M42 6C42 6 36 9.6 30 18C24 26.4 18 36 18 42C18 48 24 54 30 54C36 54 42 48 42 42C42 36 38.4 24 42 6Z" fill="#FDB913" stroke="#FDB913" stroke-width="1.2"/>
-                        <path d="M30 18C30 18 26.4 24 26.4 30C26.4 36 30 42 30 42" stroke="#FFFFFF" stroke-width="1.2"/>
-                        <!-- Heartbeat line -->
-                        <path d="M6 30L18 30L21.6 24L26.4 36L31.2 18L36 42L40.8 30L54 30" stroke="#1D7E6F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
+                <img src="Logo 2.png" alt="LifeScribe logo" style="width: 60px; height: 60px;" />
             </div>
             <p class="footer-email">hello@trylifescribe.com</p>
         </div>
@@ -1522,9 +1484,18 @@
                 imagesPreloaded = true;
                 
                 const imagesToPreload = [
-                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image1.png',
-                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/chapter_image2.png',
-                    'https://raw.githubusercontent.com/Grant-LS/lifescribe/main/lifescribe-website-html/images/logo.png'
+                    'Hero.jpg',
+                    'How it Works 1.jpg',
+                    'How it Works 2.jpg',
+                    'How it Works 3.jpg',
+                    'How it Works 4.jpg',
+                    'How it Works 5.jpg',
+                    'Your Story 1.jpg',
+                    'Your Story 2.jpg',
+                    'Logo 2.png',
+                    'Icon 1.png',
+                    'Icon 2.png',
+                    'Icon 3.png'
                 ];
                 
                 imagesToPreload.forEach(src => {
