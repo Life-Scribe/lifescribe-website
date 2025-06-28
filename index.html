@@ -27,14 +27,16 @@
     <meta property="og:url" content="https://trylifescribe.com/">
     <meta property="og:title" content="LifeScribe - Every Life Deserves a Legacy">
     <meta property="og:description" content="Transform your memories into beautifully written chapters. Preserve your legacy for future generations.">
-    <meta property="og:image" content="Hero.jpg">
+    <meta property="og:image" content="https://lifescribe.ai/Logo_bg.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://trylifescribe.com/">
     <meta property="twitter:title" content="LifeScribe - Every Life Deserves a Legacy">
     <meta property="twitter:description" content="Transform your memories into beautifully written chapters. Preserve your legacy for future generations.">
-    <meta property="twitter:image" content="Hero.jpg">
+    <meta property="twitter:image" content="https://lifescribe.ai/Logo_bg.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
@@ -202,7 +204,7 @@
         .top-banner {
             width: 100%;
             background: #1D7E6F;
-            height: 96px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -221,7 +223,7 @@
         .navigation {
             width: 100%;
             background: #FFFFFF;
-            height: 192px;
+            height: 96px;
             display: flex;
             align-items: center;
             position: relative;
@@ -241,8 +243,8 @@
         }
         
         .logo-icon {
-            width: clamp(350px, 60vw, 500px);
-            height: clamp(350px, 60vw, 500px);
+            width: clamp(175px, 30vw, 250px);
+            height: clamp(175px, 30vw, 250px);
             flex-shrink: 0;
             object-fit: contain;
             display: block;
@@ -285,7 +287,7 @@
         .nav-cta {
             background: #FE5E2E;
             border-radius: 50px;
-            padding: clamp(0.75rem, 3vw, 1rem) clamp(2rem, 5vw, 3rem);
+            padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(1rem, 2.5vw, 1.5rem);
             transition: all 0.3s ease;
             border: none;
         }
@@ -299,7 +301,7 @@
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             color: #FFFFFF;
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-size: clamp(0.5rem, 1.25vw, 0.625rem);
             line-height: 1.2;
             letter-spacing: 0.03em;
         }
@@ -558,19 +560,40 @@
         }
         
         .sign-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: clamp(1rem, 3vw, 2rem);
+            width: 55%;
+            position: relative;
+            padding-left: 120px;
+            padding-right: 40px;
+            align-items: center;
+            height: 100%;
             overflow: hidden;
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+        
+        .slider-container {
+            display: flex;
+            gap: 15px;
+            animation: slideRight 30s linear infinite;
+            width: calc(300% + 75px); /* Width for seamless loop */
         }
         
         .sign-image {
-            width: 100%;
-            height: clamp(288px, 43.2vw, 432px);
-            min-height: 288px;
+            flex: none;
+            width: 250px;
+            height: 370px;
+            background-size: cover;
+            background-position: center;
             border-radius: 8px;
-            overflow: hidden;
-            background-color: #f0f0f0;
+        }
+        
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
         }
         
         .sign-img {
@@ -1090,6 +1113,13 @@
                 flex-direction: row-reverse;
             }
             
+            /* Mobile section reordering for "Not Sure What to Write" */
+            @media (max-width: 768px) {
+                .feature-container.reverse {
+                    flex-direction: column-reverse;
+                }
+            }
+            
             .steps-container {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
@@ -1121,6 +1151,21 @@
             }
         }
         
+        /* Mobile header layout adjustments */
+        @media screen and (max-width: 768px) {
+            .navigation {
+                justify-content: space-between;
+            }
+            
+            .logo-container {
+                justify-self: flex-start;
+            }
+            
+            .nav-cta {
+                justify-self: flex-end;
+            }
+        }
+
         /* Mobile Menu Styles */
         @media (max-width: 767px) {
             .mobile-menu-toggle {
@@ -1327,11 +1372,20 @@
                     <p class="sign-description">Your story is part of something bigger. Lifescribe helps you remember not just what happened in your life—but what shaped the world around it.</p>
                 </div>
                 <div class="sign-images">
-                    <div class="sign-image">
-                        <img src="NL_1001_700x700 1.png" alt="Neil Young album cover" class="sign-img">
-                    </div>
-                    <div class="sign-image">
-                        <img src="Elvis_Presley_Jailhouse_Rock.jpg" alt="Elvis Presley Jailhouse Rock album cover" class="sign-img">
+                    <div class="slider-container">
+                        <div class="sign-image" style="background-image: url('7c7afbda-ca81-492d-ac6a-296c0eefe795.sized-1000x1000.jpg');"></div>
+                        <div class="sign-image" style="background-image: url('Bobbi-Kelly-and-Nick-Ercoline-Woodstock-1969-631.webp');"></div>
+                        <div class="sign-image" style="background-image: url('Elvis_Presley_Jailhouse_Rock.jpg');"></div>
+                        <div class="sign-image" style="background-image: url('moon-landing-textimage_4x3.avif');"></div>
+                        <div class="sign-image" style="background-image: url('NL_1001_700x700 1.png');"></div>
+                        <div class="sign-image" style="background-image: url('post-1_image0-52.webp');"></div>
+                        <!-- Repeat for seamless loop -->
+                        <div class="sign-image" style="background-image: url('7c7afbda-ca81-492d-ac6a-296c0eefe795.sized-1000x1000.jpg');"></div>
+                        <div class="sign-image" style="background-image: url('Bobbi-Kelly-and-Nick-Ercoline-Woodstock-1969-631.webp');"></div>
+                        <div class="sign-image" style="background-image: url('Elvis_Presley_Jailhouse_Rock.jpg');"></div>
+                        <div class="sign-image" style="background-image: url('moon-landing-textimage_4x3.avif');"></div>
+                        <div class="sign-image" style="background-image: url('NL_1001_700x700 1.png');"></div>
+                        <div class="sign-image" style="background-image: url('post-1_image0-52.webp');"></div>
                     </div>
                 </div>
             </div>
