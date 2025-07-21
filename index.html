@@ -72,6 +72,21 @@
         @media (min-width:768px){.hero-content{flex-direction:row;min-height:80vh}.hero-left{flex:1;max-width:50%}.hero-right{flex:1;min-height:80vh}}
     </style>
     
+    <!-- Brevo Conversations {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.BrevoConversationsID = '687010eb98c0fc1b3b0d39b7';
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'BrevoConversations');
+    </script>
+    <!-- /Brevo Conversations {/literal} -->
+
     <style>
         /* ==========================================================================
            RESET & BASE STYLES
@@ -2046,7 +2061,13 @@
         document.head.appendChild(style);
     </script>
     
+    <!-- LifeScribe Debug Script -->
+    <script src="debug-frontend.js"></script>
+    
     <!-- LifeScribe Popup System -->
     <script src="popup-system.js"></script>
+    
+    <!-- LifeScribe Brevo Chatbot Integration -->
+    <script src="brevo-chatbot.js"></script>
 </body>
 </html>
