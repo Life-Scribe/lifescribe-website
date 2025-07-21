@@ -610,10 +610,22 @@ class LifeScribePopupSystem {
     }
 
     detectApiBase() {
-        // In development, use localhost:3000, in production use current domain
+        // In development, use localhost:3000
         if (window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1')) {
             return 'http://localhost:3000';
         }
+        
+        // Production API endpoint - LifeScribe backend API
+        if (window.location.hostname.includes('trylifescribe.com')) {
+            return 'https://api.trylifescribe.com';
+        }
+        
+        // GitHub Pages deployment
+        if (window.location.hostname.includes('github.io')) {
+            return 'https://api.trylifescribe.com';
+        }
+        
+        // Default fallback to same domain
         return window.location.origin;
     }
 
